@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <title>교통사고치료 지역 주치의 네트워크 하나카N</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../css/style.css" />
+</head>
+
+<body>
+  <div class="wrap">
+    <!--s: 헤더-->
+    <header>
+      <div class="sm-header">
+        <div class="container clearfx">
+          <a href="#" class="icon menu-btn">메뉴</a>
+          <h1><a href="index.html" class="icon logo">하나카N</a></h1>
+          <nav class="gnb">
+            <a href="#" class="icon close-btn">닫기</a>
+            <ul class="clearfx">
+              <li>
+                <a href="#" class="oneD">내 지역 한의원 찾기</a>
+              </li>
+              <li>
+                <a href="#" class="oneD">보험처리 절차</a>
+              </li>
+              <li>
+                <a href="#" class="oneD">교통사고 후유증 치료</a>
+              </li>
+              <li>
+                <a href="#" class="oneD">미디어N뉴스</a>
+                <ul class="twoD">
+                  <li><a href="#">미디어속하나카N</a></li>
+                  <li><a href="#">공지사항</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#" class="oneD">온라인 가입문의</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="tel-btn clearfx">
+            <h3>가맹문의</h3>
+            <a href="tel:1544-3508" class="icon tel">전화 상담</a>
+            <a href="#" class="icon kakao">카톡 상담</a>
+          </div>
+        </div>
+      </div>
+      <div class="lg-header">
+        <div class="container clearfx">
+          <div class="copy">
+              <span class="icon"></span>
+              <p><strong>교통사고후유증치료?</strong>하나를 기억하면 건강이 보인다!</p>
+          </div>
+          <h1><a href="index.html" class="icon logo">하나카N</a></h1>
+          <div class="tel-btn clearfx">
+            <div class="number">
+              <dl>
+                <dt>가맹문의</dt>
+                <dd><a href="tel:02-781-1633">02-781-1633</a></dd>
+              </dl>
+              <dl>
+                <dt>빠른가입</dt>
+                <dd><a href="tel:010-4236-6319">010-4236-6319</a></dd>
+              </dl>
+            </div>
+            <ul class="clearfx">
+              <li><a href="#" class="kakao">카카오톡 가맹상담</a></li>
+              <li><a href="#" class="tel">SMS 가맹문의</a></li>
+            </ul>
+          </div>
+        </div>
+        <nav class="gnb">
+          <ul class="clearfx">
+            <li>
+              <a href="#" class="oneD find-hospital">전국 100개, 내 지역 한의원 찾기</a>
+              <ul class="twoD city">
+                <li><a href="#">전체</a></li>
+                <li><a href="#">서울</a></li>
+                <li><a href="#">경기</a></li>
+                <li><a href="#">인천</a></li>
+                <li><a href="#">강원</a></li>
+                <li><a href="#">부산</a></li>
+                <li><a href="#">대구</a></li>
+                <li><a href="#">울산</a></li>
+                <li><a href="#">경남</a></li>
+                <li><a href="#">경북</a></li>
+                <li><a href="#">대전</a></li>
+                <li><a href="#">세종</a></li>
+                <li><a href="#">충남</a></li>
+                <li><a href="#">충북</a></li>
+                <li><a href="#">광주</a></li>
+                <li><a href="#">전남</a></li>
+                <li><a href="#">전북</a></li>
+                <li><a href="#">제주</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" class="oneD">보험처리 절차</a>
+            </li>
+            <li>
+              <a href="#" class="oneD">교통사고 후유증 치료</a>
+            </li>
+            <li>
+              <a href="#" class="oneD">미디어N뉴스</a>
+              <ul class="twoD">
+                <li><a href="#">미디어속하나카N</a></li>
+                <li><a href="#">공지사항</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" class="oneD">온라인 가입문의</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!--e: 헤더-->
+
+    <main>
+      <div class="quick-search-wrap">
+        <div class="container">
+          <h3><strong>지역명</strong>으로 <br><strong>빠르게 찾기</strong></h3>
+          <div class="select-block clearfx">
+            <dl>
+              <dt>시/도</dt>
+              <dd>
+                <select id="select-1">
+                  <option value="">전국</option>
+                  <option value="">서울</option>
+                  <option value="">경기</option>
+                  <option value="">인천</option>
+                  <option value="">강원</option>
+                  <option value="">부산</option>
+                  <option value="">대구</option>
+                  <option value="">울산</option>
+                  <option value="">경남</option>
+                  <option value="">경북</option>
+                  <option value="">대전</option>
+                  <option value="">세종</option>
+                  <option value="">충남</option>
+                  <option value="">충북</option>
+                  <option value="">광주</option>
+                  <option value="">전남</option>
+                  <option value="">전북</option>
+                  <option value="">제주</option>
+                </select>
+              </dd>
+            </dl>
+            <dl>
+              <dt>시/구/군</dt>
+              <dd>
+                <select id="select-2">
+                  <option value="">전체</option>
+                </select>
+              </dd>
+            </dl>
+            <button class="search-btn">검색<span class="icon"></span></button>
+          </div>
+        </div>
+      </div>
+      <div class="sub-breadcrumb">
+       <div class="container">
+         <ul class="clearfx">
+           <li><a href="#" class="icon home">홈</a></li>
+           <li><a href="#">내 지역 한의원 찾기</a></li>
+           <li><a href="#">지점 자세히보기</a></li>
+         </ul>
+       </div>
+      </div>
+      
+      <div class="container">
+        <div class="hospital-name">
+          <h3>경희365한의원</h3>
+          <ul class="location">
+            <li>서울 중랑구</li>
+            <li>면목동점</li>
+          </ul>
+          <span class="open-wrap">
+            <span class="night">야간진료</span>
+            <span class="sunday">일요일진료</span>
+          </span>
+        </div>   
+        <div class="hospital-info clearfx">
+          <div class="doctor-box">
+            <div class="doctor" style="background-image: url(https://ipwoncom.cafe24.com/data/owner/d1089363ee43796aec024d85e3346ab3.jpg)"></div>
+            <strong>김태정 원장</strong>
+          </div>
+          <div class="info-box">
+            <div class="link-btns">
+              <a href="#" class="icon home on">홈페이지</a>
+              <a href="#" class="icon blog on">블로그</a>
+              <a href="#" class="icon kakao">카카오톡</a>
+            </div>
+            <dl>
+              <dt>전화번호</dt>
+              <dd class="tel">02-427-7974</dd>
+            </dl>
+            <dl>
+              <dt>지하철</dt>
+              <dd>
+                <span class="subway"><em class="line-3">3호선</em>가락시장</span>
+                <span class="subway"><em class="line-8">8호선</em>가락시장</span>
+              </dd>
+            </dl>
+            <dl>
+              <dt>주소</dt>
+              <dd>
+                <dl class="address">
+                  <dt>도로명</dt>
+                  <dd>서울 송파구 송파대로32길 15 상가동 210,211호(가락동, 가락금호아파트)</dd>
+                </dl>
+                <dl class="address">
+                  <dt>지번</dt>
+                  <dd>서울 송파구 송파대로32길 15 상가동 210,211호(가락동, 가락금호아파트)</dd>
+                </dl>
+              </dd>
+            </dl>
+            <p>장기 주차는 어려우니 입원실 이용시 대중교통을 이용해주세요.  
+입원실 이용시 대중교통을 이용해주세요.</p>
+          </div>
+        </div>
+        <div class="hospital-timetable">
+          <h2 class="section-tit">진료 시간</h2>
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>OPEN</th>
+                <th>CLOSE</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>월요일</th>
+                <td>오전 09:30</td>
+                <td>오후 07:00</td>
+              </tr>
+              <tr>
+                <th>화요일</th>
+                <td>오전 09:30</td>
+                <td><strong>야간진료</strong>오후 09:00</td>
+              </tr>
+              <tr>
+                <th>수요일</th>
+                <td>오전 09:30</td>
+                <td>오후 07:00</td>
+              </tr>
+              <tr>
+                <th>목요일</th>
+                <td>오전 09:30</td>
+                <td><strong>야간진료</strong>오후 09:00</td>
+              </tr>
+              <tr>
+                <th>금요일</th>
+                <td>오전 09:30</td>
+                <td>오후 07:00</td>
+              </tr>
+              <tr>
+                <th>토요일</th>
+                <td>오전 09:30</td>
+                <td>오후 07:00</td>
+              </tr>
+              <tr>
+                <th>일요일</th>
+                <td colspan="2">휴진일</td>
+              </tr>
+              <tr class="lunch">
+                <th>점심시간</th>
+                <td colspan="2">※ 평일에는 오후 01:00 ~ 오후 02:00 까지 점심시간입니다.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="hospital-map clearfx">
+          <h2 class="section-tit">오시는 길</h2>
+          <div class="map-box">
+            <!-- * 카카오맵 - 지도퍼가기 -->
+            <!-- 1. 지도 노드 -->
+            <div id="daumRoughmapContainer1588582342871" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+
+            <!--
+                        2. 설치 스크립트
+                        * 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
+                    -->
+            <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+
+            <!-- 3. 실행 스크립트 -->
+            <script charset="UTF-8">
+              new daum.roughmap.Lander({
+                "timestamp": "1588582342871",
+                "key": "y7n3",
+                "mapWidth": "100%",
+                "mapHeight": "auto"
+              }).render();
+            </script>
+            
+            <div class="btn-wrap">
+              <a href="#" class="link-btn naver">네이버 지도 보기</a>
+              <a href="#" class="link-btn kakao">맵 보기</a>
+            </div>
+          </div>
+        </div>
+        <div class="hospital-gallery">
+          <div class="swiper-container gallery-top">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image: url(https://ipwoncom.cafe24.com/data/panorama/d559abdc1a20870af4bd4fefd9f64837.jpg)"></div>
+            <div class="swiper-slide" style="background-image: url(https://ipwoncom.cafe24.com/data/panorama/d559abdc1a20870af4bd4fefd9f64837.jpg)"></div>
+            <div class="swiper-slide" style="background-image: url(https://ipwoncom.cafe24.com/data/panorama/d559abdc1a20870af4bd4fefd9f64837.jpg)"></div>
+            <div class="swiper-slide" style="background-image: url(https://ipwoncom.cafe24.com/data/panorama/d559abdc1a20870af4bd4fefd9f64837.jpg)"></div>
+            <div class="swiper-slide" style="background-image: url(https://ipwoncom.cafe24.com/data/panorama/d559abdc1a20870af4bd4fefd9f64837.jpg)"></div>
+            <div class="swiper-slide" style="background-image: url(https://ipwoncom.cafe24.com/data/panorama/d559abdc1a20870af4bd4fefd9f64837.jpg)"></div>
+          </div>
+          <!-- Add Arrows -->
+          <div class="swiper-button-next swiper-button-white"></div>
+          <div class="swiper-button-prev swiper-button-white"></div>
+        </div>
+          <div class="swiper-container gallery-thumbs">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image:url(https://ipwoncom.cafe24.com/data/panorama/d559abdc1a20870af4bd4fefd9f64837.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(https://ipwoncom.cafe24.com/data/panorama/d559abdc1a20870af4bd4fefd9f64837.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(https://ipwoncom.cafe24.com/data/panorama/d559abdc1a20870af4bd4fefd9f64837.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(https://ipwoncom.cafe24.com/data/panorama/d559abdc1a20870af4bd4fefd9f64837.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(https://ipwoncom.cafe24.com/data/panorama/d559abdc1a20870af4bd4fefd9f64837.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(https://ipwoncom.cafe24.com/data/panorama/d559abdc1a20870af4bd4fefd9f64837.jpg)"></div>
+          </div>
+        </div>
+        </div>
+      </div>
+      
+       <div class="search-wrap">
+        <div class="container">
+          <h4>원하시는 검색 결과를 <br>다시 빠르게 찾길 원하신다면</h4>
+          <h3><strong>검색창</strong>을 이용해보세요.</h3>
+          <form action="">
+            <div class="search-block">
+              <input type="text" placeholder="중요시설/지역명/지하철역명으로 바로찾기!"><button class="icon">검색</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  
+    
+    <!--s: 퀵버튼 -->
+    <div class="quick-wrap">
+      <ul>
+        <li><a href="#" class="icon naver">네이버톡톡</a></li>
+        <li><a href="#" class="icon kakao">카카오톡</a></li>
+        <li><a href="#" class="icon sms">SMS가맹문의</a></li>
+      </ul>
+    </div>
+    <!--e: 퀵버튼 -->
+    
+    <!--s:푸터-->
+    <footer>
+      <div class="top">
+        <div class="container">
+          <ul class="clearfx">
+            <li><a href="index.html">하나카네트워크</a></li>
+            <li><a href="term.html">개인정보처리방침</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="bottom">
+        <div class="container">
+          <a href="#" class="foot-logo icon">하나카N</a>
+          <div class="info-list cleaffx">
+            <span>상호명 : 000한의원</span><span class="bar"></span>
+            <span>대표자명 : 000</span><span class="bar"></span>
+            <span>사업자번호 : 000-00-00000</span><br>
+            <span>대표전화 : <a href="tel:1234-5678">1234-5678</a></span><span class="bar"></span>
+            <span>이메일 : <a href="mailto:hanaka@kumsolmedia.com">hanaka@kumsolmedia.com</a></span><br>
+            <span>(08506) 서울특별시 금천구 가산디지털1로 145, 905-906호(가산동, 에이스하이엔드타워3차)</span>
+            <span class="copyright">Copyright © 하나카네트워크 All rights reserved.</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--e:푸터-->
+
+   
+    <!--s:개인정보수집-->
+    <div id="privacy_pop" class="none">
+      <div class="box">
+        <a href="#" class="btn_close"><img src="../images/close-btn-w.svg" alt="닫기"></a>
+        <strong>개인정보 수집 및 이용에 대한 안내</strong>
+        <div class="agree_box">
+          <b>개인정보의 수집 및 이용목적</b><br><br>
+          본 사이트는 온라인(상담)문의를 이용하는 기업 및 개인을 대상으로 아래와 같이 개인정보를 수집하고 있습니다.<br /><br />
+
+          1. 수집 개인정보 항목<br />
+          - 상호, 성명, 연락처, e메일, 문의내용<br /><br />
+
+          2. 개인정보의 수집 및 이용목적<br />
+          - 상담 및 문의내용에 대한 확인 및 회신<br /><br />
+
+          3. 개인정보의 보유 및 이용기간<br />
+          - 목적달성 시점까지 이용<br />
+          * 목적 이외의 타 용도로는 사용되지 않습니다.<br /><br />
+
+          4. 이외 사항은 개인정보취급방침을 준수합니다.
+        </div>
+      </div>
+    </div>
+    <!--e:개인정보수집-->
+
+    <!--s:팝업창 추가-->
+    <div class="popup-wrap none">
+      <form>
+        <div class="img-wrap"><a href="#"><img src="#" alt="팝업 이미지 600px * 600px"></a></div>
+        <div class="ft-wrap">
+          <input type="checkbox" id="chkbox">
+          <label for="chkbox">오늘 하루 이 창을 열지 않음</label>
+          <a href="#">[CLOSE]</a>
+        </div>
+      </form>
+    </div>
+    <!--e:팝업창 추가-->
+
+
+
+  </div>
+
+  <script>
+    
+    //갤러리 스와이퍼
+    var galleryThumbs = new Swiper('.gallery-thumbs', {
+      slidesPerView: 2.1,
+      slidesPerColumn: 2,
+      watchSlidesVisibility: true,
+      watchSlidesProgress: true,
+    });
+    var galleryTop = new Swiper('.gallery-top', {
+      spaceBetween: 10,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      thumbs: {
+        swiper: galleryThumbs
+      }
+    });
+
+    
+    $(function() {
+      //개인정보수집
+      $('.btn_privacy').on('click', function(e) {
+        e.preventDefault();
+        $('#privacy_pop').show();
+      });
+      $('#privacy_pop .btn_close').on('click', function(e) {
+        e.preventDefault();
+        $('#privacy_pop').hide();
+      });
+
+      //메뉴 클릭시 네비게이션 보이기
+      $('.menu-btn').on('click', function(e) {
+        $('.gnb').addClass('on');
+      });
+
+      //네비게이션 닫기
+      $('.close-btn').on('click', function(e) {
+        $('.gnb').removeClass('on');
+      });
+
+      //메뉴 클릭시 서브 메뉴 보이기
+      $('.oneD').on('click', function(e) {
+        $(this).toggleClass('on');
+      });
+    });
+  </script>
+</body>
+
+</html>
