@@ -17,5 +17,6 @@ jobs:
         password: ${{ secrets.FTP_PW }}
         port: 22
         script: |
+          cd www
           git pull origin main
 
