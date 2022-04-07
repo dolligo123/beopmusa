@@ -19,4 +19,4 @@ jobs:
         username: ${{ secrets.FTP_ID }}
         password: ${{ secrets.FTP_PW }}
         local-dir: ./adm/
-        server-dir: beopmusa/adm/
+        server-dir: beopmusa/www/adm/
