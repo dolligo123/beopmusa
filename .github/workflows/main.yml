@@ -6,19 +6,12 @@ on:
 
 jobs:
   web-deploy:
-    name: 🎉 Deploy
-    runs-on: ubuntu-latest
-    steps:
-    - name: 🚚 Get latest code
+    - name: executing remote ssh commands using password
       uses: appleboy/ssh-action@master
       with:
-        host: ${{ secrets.FTP_HOST }}
-        username: ${{ secrets.FTP_ID }}
-        password: ${{ secrets.FTP_PW }}
-        port: 22
-        script: |
-          whoami
-          ls -al
-          cd www
-          git pull origin main
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        port: ${{ secrets.PORT }}
+        script: whoami
 
