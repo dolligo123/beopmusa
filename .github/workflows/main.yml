@@ -10,13 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: 🚚 Get latest code
-      uses: actions/checkout@v2
-    
-    - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      uses: appleboy/ssh-action@master
       with:
-        server: ${{ secrets.FTP_HOST }}
+        host: ${{ secrets.FTP_HOST }}
         username: ${{ secrets.FTP_ID }}
-        password: ${{ secrets.FTP_PW }}
-        local-dir: ./adm/
-        server-dir: beopmusa/www/adm/
+        key: ${{ secrets.FTP_PW }}
+        port: 22
+        script: |
+          git pull origin main
+
