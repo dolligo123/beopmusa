@@ -16,5 +16,5 @@ jobs:
         username: ${{ secrets.FTP_ID }}
         password: ${{ secrets.FTP_PW }}
         port: 22
-        script: whoami
+        script: la -al
 
