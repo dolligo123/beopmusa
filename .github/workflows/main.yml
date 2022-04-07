@@ -14,6 +14,6 @@ jobs:
       with:
         host: beopmusa.cafe24.com
         username: beopmusa
-        password: beopmusa1357!
+        password: beopmusa1357!1
         port: 22
 
