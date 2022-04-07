@@ -18,3 +18,4 @@ jobs:
         server: ${{ secrets.FTP_HOST }}
         username: ${{ secrets.FTP_ID }}
         password: ${{ secrets.FTP_PW }}
+
