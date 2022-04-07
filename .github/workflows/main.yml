@@ -2,7 +2,7 @@ name: beopmusa deploy
 
 on:
   push:
-    branches: [ none ]
+    branches: [ main ]
 
 jobs:
   web-deploy:
@@ -12,8 +12,11 @@ jobs:
     - name: 🚚 Get latest code
       uses: appleboy/ssh-action@v0.1.4
       with:
-        host: beopmusa.cafe24.com
-        username: beopmusa
-        password: beopmusa1357!
+        host: ${{ secrets.FTP_HOST }}
+        username: ${{ secrets.FTP_ID }}
+        password: ${{ secrets.FTP_PW }}
         port: 22
+        script: |
+          pwd
+          ls -al
 
