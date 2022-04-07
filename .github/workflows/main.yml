@@ -12,8 +12,8 @@ jobs:
     - name: 🚚 Get latest code
       uses: appleboy/ssh-action@master
       with:
-        host: ${{ secrets.FTP_HOST }}
-        username: ${{ secrets.FTP_ID }}
-        password: ${{ secrets.FTP_PW }}
+        host: beopmusa.cafe24.com
+        username: beopmusa
+        password: beopmusa1357!
         port: 22
 
