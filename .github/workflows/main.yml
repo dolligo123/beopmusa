@@ -20,3 +20,4 @@ jobs:
         password: ${{ secrets.FTP_PW }}
         local-dir: ./adm/
         server-dir: ./adm/
+
