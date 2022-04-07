@@ -16,5 +16,5 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-          apt-get install sshpass
+          sudo apt-get install sshpass
 
