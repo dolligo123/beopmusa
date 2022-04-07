@@ -17,6 +17,5 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
           sudo apt-get install sshpass
-          sudo ssh beopmusa@beopmusa.cafe24.com
-    # sudo sshpass -pbeopmusa1357! ssh beopmusa@beopmusa.cafe24.com
+          sudo sshpass -pbeopmusa1357! ssh beopmusa@beopmusa.cafe24.com -p22 -oStrictHostKeyChecking=no
 
