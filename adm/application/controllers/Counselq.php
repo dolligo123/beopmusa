@@ -3,7 +3,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 require_once 'Login.php';
 
-class Joinq extends Login
+class Counselq extends Login
 {
 	public function __construct()
 	{
