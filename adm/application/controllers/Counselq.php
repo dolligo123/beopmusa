@@ -13,6 +13,7 @@ class Counselq extends Login
 		$this->load->library('user_agent');
 		date_default_timezone_set('Asia/Seoul');
 
+		 
 		$this->_islogin();
 	}
 
