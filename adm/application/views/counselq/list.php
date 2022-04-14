@@ -1,6 +1,6 @@
 <main class="main-wrap">
         <div class="card-wrap">
-            <h1>문의</h1>
+            <h1>상담문의</h1>
             <div class="top-btn-wrap">
                 <ul class="clearfx">
 	                <li>
@@ -8,13 +8,6 @@
                     </li>
                     <li>
                         <input type="text" id="tel" value="<?php echo $this->input->get('tel'); ?>" placeholder="전화번호 검색" />
-                    </li>                                        
-                    <li>
-                        <select id="isopen">
-                            <option value="">공개 여부</option>
-                            <option value="1" <? if ($this->input->get('isopen') == '1') echo 'selected';  ?> >공개</option>
-                            <option value="0" <? if ($this->input->get('isopen') == '0') echo 'selected';  ?> >비공개</option>
-                        </select>
                     </li>                                        
                     <li><a href="counselq/edit" class="type1-btn">등록하기</a></li>
                     <li><a href="exceldown?isexcel=true" class="type2-btn" id="excel">엑셀 다운로드</a></li>
@@ -153,7 +146,7 @@
 			        },
 			        { 
 				        "orderable": false,
-			        	"data": "id",
+			        	"data": "isopen",
 			        	"className" : "alignCenter",
 			        	"render" : function (val, type, row) {
 				        	var retval = "";
@@ -262,7 +255,7 @@
                     success: function (data) { 
                         var excelHandler = {
                             getExcelFileName : function(){
-                                var filename = "문의목록_" + "<?=date('YmdHis')?>" + ".xlsx";
+                                var filename = "상담문의목록_" + "<?=date('YmdHis')?>" + ".xlsx";
                                 return filename;
                             },
                             getSheetName : function(){
