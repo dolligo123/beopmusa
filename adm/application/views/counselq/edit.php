@@ -22,7 +22,7 @@
             </dl>
             <dl>
                 <dt>
-                    <h1>시/도</h1>
+                    <h1>광역시도</h1>
                 </dt>
                 <dd>
                     <input type="text" name="city" placeholder="시/도 선택" value="<?=$counselq['city']?>" />
@@ -30,7 +30,7 @@
             </dl>
             <dl>
                 <dt>
-                    <h1>시/군/구</h1>
+                    <h1>시군구</h1>
                 </dt>
                 <dd>
                     <input type="text" name="district" placeholder="시/군/구 선택" value="<?=$counselq['district']?>" />

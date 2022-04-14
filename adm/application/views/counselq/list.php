@@ -26,11 +26,14 @@
 					<thead>
 			            <tr>
 				            <th>번호</th>
-			                <th>법무사명</th>
 			                <th>이름</th>
                             <th>연락처</th>
+                            <th>광역시도</th>
+                            <th>시군구</th>
+                            <th>상담희망분야</th>
+			                <th>문의내용</th>
 			                <th>등록일</th>
-			                <th>관리</th>
+			                <th>관리</th>							
 			            </tr>
 			        </thead>
 			    </table>            
@@ -146,12 +149,11 @@
 			        	"className" : "alignCenter",
 			        	"render" : function (val, type, row) {
 				        	return '<span class="date">' + val.substr(0, 10) + '</span>';
-				        	//return '<span class="date">' + val + '</span>';
 		                }
-			        },		                
+			        },
 			        { 
 				        "orderable": false,
-			        	"data": "isopen",
+			        	"data": "id",
 			        	"className" : "alignCenter",
 			        	"render" : function (val, type, row) {
 				        	var retval = "";
