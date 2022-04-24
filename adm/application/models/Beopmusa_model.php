@@ -89,7 +89,7 @@ class Beopmusa_model extends CI_Model
 				if(isopen = '1', 'O', 'X')	as	`공개여부`	,
 				regist_date	as	`등록일자`	,
 				update_date	as	`수정일자`	,
-				hp_uid	as	`법무사개별아이디`	,
+				bp_uid	as	`법무사개별아이디`	,
 				b_number	as	`사업자번호`	,
 				tags	as	`태그`	
 			");
@@ -164,13 +164,13 @@ class Beopmusa_model extends CI_Model
 		endif;
 	}
 
-	// check hp_uid
-	public function get_row_hp_uid($hp_uid, $bp_id)
+	// check bp_uid
+	public function get_row_bp_uid($bp_uid, $bp_id)
 	{
 		$query = $this->db->query("
 			select a.*
 			from   beopmusa a
-            where  hp_uid = " . $this->db->escape($hp_uid) . "
+            where  bp_uid = " . $this->db->escape($bp_uid) . "
             and    bp_id <> " . $this->db->escape($bp_id) . "
 		");
 		return $query->row_array();

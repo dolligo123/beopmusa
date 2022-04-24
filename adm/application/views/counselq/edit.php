@@ -20,6 +20,14 @@
                     <input type="text" name="tel" placeholder="연락처 입력하세요." value="<?=$counselq['tel']?>" />
                 </dd>
             </dl>
+			<dl>
+                <dt>
+                    <h1>통화가능시간</h1>
+                </dt>
+                <dd>
+                    <input type="text" name="call_time" placeholder="통화가능시간 입력하세요." value="<?=$counselq['call_time']?>" />
+                </dd>
+            </dl>            
             <dl>
                 <dt>
                     <h1>광역시도</h1>
@@ -36,6 +44,14 @@
                     <input type="text" name="district" placeholder="시/군/구 선택" value="<?=$counselq['district']?>" />
                 </dd>
             </dl>
+			<dl>
+                <dt>
+                    <h1>상담 제목</h1>
+                </dt>
+                <dd>
+                    <input type="text" name="title" placeholder="상담 제목을 입력하세요." value="<?=$counselq['title']?>" />
+                </dd>
+            </dl>              
 			<dl>
                 <dt>
                     <h1>상담 희망분야</h1>

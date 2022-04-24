@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-    <title>하나카네트워크 관리자</title>
+    <title>법무사네트워크 관리자</title>
     
     <link rel="stylesheet" type="text/css" href="/css/admin.css" />
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -56,7 +56,7 @@
 </head>
 <body>
     <nav class="sidebar">
-        <a href="/adm" class="icon logo">하나카네트워크</a>
+        <a href="/adm" class="icon logo">법무사네트워크</a>
         <a href="javascript:void(0)" class="icon menu-btn">메뉴</a>
         <ul class="menu-list">
             <li><a href="/adm/beopmusa" data-menu='beopmusa'>법무사목록</a></li>

@@ -111,7 +111,7 @@ class Beopmusa extends Parents {
 		if(is_numeric($id)):
 			$param['where']['bp_id'] = $id;
 		else:
-			$param['where']['hp_uid'] = $id;
+			$param['where']['bp_uid'] = $id;
 		endif;        
         		
         $data = $this->beopmusa_model->read($param);

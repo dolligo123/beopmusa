@@ -46,13 +46,18 @@ class counselq_model extends CI_Model {
 			$this->db->select("
                 name	as	`이름`	,
                 tel	as	`연락처`	,
-                city	as	`시/도`	,
-                district	as	`시/군/구`	,
+                (select city_name from city b where b.city_code = a.city_code)	as	`시/도`	,
+                (select district_name from district b where b.district_code = a.district_code)	as	`시/군/구`	,
                 fields	as	`상담 희망분야`	,
                 desc	as	`문의내용`	,
                 regist_date	as	`등록일자`	,
                 update_date	as	`수정일자`	
             ");	
+		else:
+			$this->db->select("a.*, 
+											(select city_name from city b where b.city_code = a.city_code) city, 
+											(select district_name from district b where b.district_code = a.district_code) district, 
+			");
 		endif;		
 		
 		// get
