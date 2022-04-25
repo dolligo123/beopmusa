@@ -8,7 +8,6 @@ class Main extends Parents
   public function __construct()
   {
     parent::__construct();
-    $this->load->model("notice_model");
     $this->load->model("article_model");
     $this->load->model("banner_model");
     $this->load->model("counselq_model");
@@ -20,13 +19,11 @@ class Main extends Parents
 
   public function index()
   {
-    // notice
-    $param['where']['isopen'] = '1';
+    // article
     $param['orderby'] = 'regist_date';
     $param['sort'] = 'desc';
     $param['start'] = 0;
     $param['length'] = 3;
-    $data['notice'] = $this->notice_model->read($param);
 
     // article
     $data['article'] = $this->article_model->read($param);

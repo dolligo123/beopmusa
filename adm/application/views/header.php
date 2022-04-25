@@ -64,7 +64,6 @@
             <li><a href="/adm/counselq" data-menu='counselq'>상담문의</a></li>
 	        <li><a href="/adm/banner" data-menu='banner'>배너관리</a></li>
             <li><a href="/adm/article" data-menu='article'>미디어</a></li>
-            <li><a href="/adm/notice" data-menu='notice'>공지사항</a></li>
             <li><a href="/adm/manager" data-menu='manager'>관리자정보</a></li>
             <li><a href="/adm/login/logout">로그아웃</a></li>
         </ul>
