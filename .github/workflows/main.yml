@@ -14,6 +14,7 @@ jobs:
         uses: 8398a7/action-slack@v3
         with:
           status: custom
+          as_user: false
           icon_url: 'https://ca.slack-edge.com/T4CFRP1BL-U0187TAJKHQ-ee81477b3311-512'
           custom_payload: |
             {
