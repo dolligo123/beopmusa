@@ -66,10 +66,10 @@ class Joinq extends Parents
     $r_phone = $manager['data'][0]['tel_sms'];
 
     if ($r_phone) {
-      $message = "<h2>[법무사넷] " . $joinq['data'][0]['tel'] . "님의 문의가 도착했습니다.</h2>" .
+      $message = "<h2>[법무사넷] 가입문의가 도착했습니다.</h2>" .
         $bp_name . $tel . $local . $jq_desc;
 
-      $title = "법무사넷 " . $joinq['data'][0]['tel'] . "님의 문의가 도착했습니다.";
+      $title = "[법무사넷] 가입문의가 도착했습니다.";
       // $this->sendmail($joinq['data'][0]['jq_name'], $title, $message, $manager['data'][0]['email']);
       // $this->sendmail($joinq['data'][0]['jq_name'], $title, $message, 'abc@kumsolmedia.com');
       $this->sendmail($joinq['data'][0]['tel'], $title, $message, 'kyudaddy@gmail.com');
