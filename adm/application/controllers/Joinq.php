@@ -29,9 +29,9 @@ class Joinq extends Login
 	public function json()
 	{
 		// $_REQUEST
-		$param['like']['hp_name'] = $this->input->get('hp_name');
+		$param['like']['bp_name'] = $this->input->get('bp_name');
 		$param['like']['isopen'] = $this->input->get('isopen');
-		$param['like']['jq_name'] = $this->input->get('jq_name');
+		$param['like']['local'] = $this->input->get('local');
 		$param['like']['tel'] = $this->input->get('tel');
 
 		// start, length

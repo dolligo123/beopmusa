@@ -44,7 +44,7 @@ class joinq_model extends CI_Model {
 		// isexcel
 		if($this->input->get("isexcel") == 'true'):
 			$this->db->select("
-                hp_name	as	`한의원명`	,
+                bp_name	as	`법무사명`	,
                 jq_name	as	`이름`	,
                 tel	as	`연락처`	,
                 jq_desc	as	`문의내용`	,

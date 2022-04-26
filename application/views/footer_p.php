@@ -1,15 +1,3 @@
-    <!--s: 퀵버튼 -->
-<!--
-    <div class="quick-wrap">
-        <ul>
-            <li><a href="#" class="icon naver">네이버톡톡</a></li>
-            <li><a href="#" class="icon kakao">카카오톡</a></li>
-            <li><a href="#" class="icon sms">SMS가맹문의</a></li>
-        </ul>
-    </div>
--->
-    <!--e: 퀵버튼 -->
-
     <!--s:푸터-->
     <footer>
         <div class="bottom">
@@ -20,11 +8,11 @@
                     <span>전화번호 : <?=$data[0]['tel']?></span><br>
                     <span>사업자번호 : <?=$data[0]['b_number']?></span><br>
                     <span><?=$data[0]['addr_new']?> <?=$data[0]['addr_sub']?></span>
-                    <span class="copyright">Copyright © 하나카네트워크 All rights reserved.</span>
+                    <span class="copyright">Copyright © 법무사네트워크 All rights reserved.</span>
                 </div>
 
                 <div class="bottom-logo">
-                    <a href="#" class="foot-logo icon">하나카N</a>
+                    <a href="#" class="foot-logo icon">법무사넷</a>
                     <p><?=$data[0]['city_name']?> <?=$data[0]['district_name']?> | <?=$data[0]['sub_name']?></p>
                 </div>
             </div>

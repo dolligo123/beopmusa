@@ -140,8 +140,8 @@ class Common {
         
         $sms_url = "https://sslsms.cafe24.com/sms_sender.php"; // HTTPS 전송요청 URL
         // $sms_url = "http://sslsms.cafe24.com/sms_sender.php"; // 전송요청 URL
-        $sms['user_id'] = base64_encode("ksagreesms"); //SMS 아이디.
-        $sms['secure'] = base64_encode("e7591372abf67cfa878626caf2a6d6e3") ;//인증키
+        $sms['user_id'] = base64_encode("beopmusasms"); //SMS 아이디.
+        $sms['secure'] = base64_encode("b848ad1688059eef63d13ff487461247") ;//인증키
         $sms['msg'] = base64_encode($message);
         //if( $_POST['smsType'] == "L"){
         //    $sms['subject'] =  base64_encode($subject);
@@ -219,8 +219,8 @@ class Common {
             $alert = "Connection Failed";
         }
 
-        //echo $alert;
-        //exit;
+        // echo $alert;
+        // exit;
 
         //$nointeractive = "1";
         $nointeractive = "";

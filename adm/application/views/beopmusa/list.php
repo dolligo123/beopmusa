@@ -161,12 +161,12 @@
 			        },
 					{
 				        "orderable": false, 
-			        	"data": "hp_uid",
+			        	"data": "bp_uid",
 			        	"className" : "alignCenter",
 			        	"render" : function (val, type, row) {
 				        	var retval = "";
 				        	retval += '<a class="type2-btn" href="/beopmusa/' + row.bp_id + '" target="_blank" >프론트보기</a>';
-				        	retval += '<a class="type2-btn" href="/' + row.hp_uid + '" target="_blank" >개별주소보기</a기';
+				        	retval += '<a class="type2-btn" href="/' + row.bp_uid + '" target="_blank" >개별주소보기</a기';
 				        	return retval;
 		                }
 			        },			        		                

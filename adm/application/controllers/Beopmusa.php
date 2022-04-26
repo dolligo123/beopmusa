@@ -189,7 +189,55 @@ class Beopmusa extends Login
         endif;
       endif;
 
+      // 원장사진 파일 업로드
+      if (isset($_FILES["intro_photo"]["tmp_name"]) && $_FILES["intro_photo"]["tmp_name"] != '') :
+        if ($_FILES["intro_photo"]["tmp_name"]) :
+          // 기존파일 있으면 삭제
+          if ($beopmusa["intro_photo"]) :
+            $file = $_SERVER['DOCUMENT_ROOT'] . $beopmusa["intro_photo"];
+            if (file_exists($file)) unlink($file);
+          endif;
 
+          // 섬네일 사진 업로드
+          $config['upload_path'] = $_SERVER['DOCUMENT_ROOT'] . '/data/beopmusa/' . date("Ym");
+          $config['allowed_types'] = 'gif|jpg|png|jpeg';
+          $config['encrypt_name'] = true;
+          $this->upload->initialize($config);
+
+          if (!is_dir($config['upload_path']))
+            mkdir($config['upload_path'], 0777, true);
+
+          // 업로드 실행
+          if (!$this->upload->do_upload("intro_photo")) :
+            $error = array('error' => $this->upload->display_errors());
+            print_r($error);
+          else :
+            $data = array('upload_data' => $this->upload->data());
+
+            $this->file_resize($data['upload_data']['full_path']);
+            $intro_photo = str_replace($_SERVER['DOCUMENT_ROOT'], "", $data['upload_data']['full_path']);
+
+            $param2['fields']['intro_photo'] = $intro_photo;
+            $param2['where']['bp_id'] = $bp_id;
+            $this->beopmusa_model->update($param2);
+
+          endif;
+
+        endif;
+      else :
+        if ($this->input->post("intro_photo_del") == "1") :
+          // 파일 있으면 삭제
+          if ($beopmusa["intro_photo"]) :
+            $file = $_SERVER['DOCUMENT_ROOT'] . $beopmusa["intro_photo"];
+            if (file_exists($file)) unlink($file);
+          endif;
+
+          $param2['fields']['intro_photo'] = "";
+          $param2['where']['bp_id'] = $bp_id;
+          $this->beopmusa_model->update($param2);
+
+        endif;
+      endif;
 
       // 전경사진 파일 업로드
       for ($i = 1; $i <= 6; $i++) :
@@ -278,13 +326,13 @@ class Beopmusa extends Login
   }
 
 
-  // check hp_uid
+  // check bp_uid
   public function checkuid()
   {
     $bp_id = $this->input->post("bp_id");
-    $hp_uid = $this->input->post("hp_uid");
+    $bp_uid = $this->input->post("bp_uid");
     $data = "";
-    switch ($hp_uid):
+    switch ($bp_uid):
       case "beopmusa":
       case "about":
       case "cure":
@@ -305,12 +353,12 @@ class Beopmusa extends Login
         $this->output->set_output(json_encode($data));
         break;
       default:
-        if (strlen($hp_uid) < 3) :
+        if (strlen($bp_uid) < 3) :
           $data = array("result" => "fail");
           $this->output->set_content_type('text/json');
           $this->output->set_output(json_encode($data));
         else :
-          $row = $this->beopmusa_model->get_row_hp_uid($hp_uid, $bp_id);
+          $row = $this->beopmusa_model->get_row_bp_uid($bp_uid, $bp_id);
           if (isset($row["bp_id"])) :
             $data = array("result" => "fail");
             $this->output->set_content_type('text/json');

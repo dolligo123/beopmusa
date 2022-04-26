@@ -28,9 +28,8 @@ body.center{display: -ms-flexbox;display: flex;-ms-flex-align: center;align-item
 
 /*======네비게이션=============*/
 .sidebar{position: fixed;top: 0;bottom: 0;left: 0;z-index: 100;width: 200px;background-color: #333;}
-.sidebar .logo{display: block;padding: 26px;background-size: 120px 50px;background-image: url(../images/hahacan-logo-w.png);background-position: 20px center;background-color: #3a3a3a}
+.sidebar .logo{display: block;padding: 26px;background-size: 120px 50px;background-image: url(../images/logo-w.png);background-position: 20px center;background-color: #3a3a3a}
 .sidebar .menu-list{margin-top: 20px}
-.sidebar .menu-list > li{}
 .sidebar .menu-list > li > a{position: relative;display: block;color: #999;padding: 10px 20px;font-size: 17px;}
 .sidebar .menu-list > li > a.on{color: #fff;}
 .menu-btn{display: none}
@@ -106,7 +105,6 @@ table.dataTable thead .sorting, table.dataTable thead .sorting_asc, table.dataTa
 .dataTables_wrapper *[class*="-btn"] {padding: 8px 15px;border-radius: 4px;font-size: 12px;font-weight: 600;margin: 0 2px 4px;white-space: nowrap}
 .dataTables_wrapper .openClose-btn{color: #3a3a3a;background-color: #fff;border: 1px solid #ccc;width: 70px}
 .dataTables_wrapper .link-btn{color: #3a3a3a;background-color: #fff;border: 1px solid #ccc}
-.dataTables_wrapper .del-btn{}
 .dataTables_wrapper .state{display: inline-block;font-weight: bold;margin-right: 8px}
 .dataTables_wrapper .date{display: inline-block;font-weight: bold;color: #999}
 .dataTables_wrapper .alignCenter{text-align: center}
@@ -115,7 +113,7 @@ table.dataTable thead .sorting, table.dataTable thead .sorting_asc, table.dataTa
 
 /*======로그인=============*/
 .signin-wrap{text-align: center;width: 100%;max-width: 340px;padding: 15px 15px 60px;margin: auto;}
-.signin-wrap .logo{width: 130px;height: 60px;background-image: url(../images/hahacan-logo.png);margin-bottom: 10px}
+.signin-wrap .logo{width: 130px;height: 60px;background-image: url(../images/logo.png);margin-bottom: 10px}
 .signin-wrap .page-tit{font-size: 42px;margin-bottom: 20px}
 .signin-wrap .input-block{margin-bottom: 15px}
 .signin-wrap .input-block input{padding: 15px 10px;border-radius: 4px;border: 1px solid #ddd;font-size: 17px;width: 100%}
@@ -160,6 +158,3 @@ table.dataTable thead .sorting, table.dataTable thead .sorting_asc, table.dataTa
 @media (min-width: 1025px){
     .sidebar .menu-list > li > a:hover{background-color: #3f3f3f}
     .card-wrap dl > dd > input:only-child{max-width: 450px}
-}
-
-
