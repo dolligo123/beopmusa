@@ -230,14 +230,13 @@
     					</div>
     				</div>
     			</form>
-
-    			<div class="soting-block">
-    				<div class="left">
-    					<span>전체 가맹점 수</span><strong class="count"><?= $this->dinfo['total_count'] ?></strong>
-    					<span>현재 지역</span><strong id="m-tit">전국</strong>
-    					<span>가맹점 수</span><strong class="count" id="dd-count"></strong>
-    				</div>
-    				<form action="/beopmusa" id="formH">
+    			<form action="/beopmusa" id="formH">
+    				<div class="soting-block">
+    					<div class="left">
+    						<span>전체 가맹점 수</span><strong class="count"><?= $this->dinfo['total_count'] ?></strong>
+    						<span>현재 지역</span><strong id="m-tit">전국</strong>
+    						<span>가맹점 수</span><strong class="count" id="dd-count"></strong>
+    					</div>
     					<input type="hidden" name="lat" />
     					<input type="hidden" name="lng" />
     					<input type="hidden" name="keyword" value="<?= $this->input->get("keyword") ?>" />
@@ -256,8 +255,8 @@
     							<option value="dist">거리순</option>
     						</select>
     					</div>
-    				</form>
-    			</div>
+    				</div>
+    			</form>
     			<ul class="office-list">
     			</ul>
     			<div class="pagenation-block">
