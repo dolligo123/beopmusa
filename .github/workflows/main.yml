@@ -9,14 +9,36 @@ jobs:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
-    - name: 🚚 Get latest code
-      uses: appleboy/ssh-action@v0.1.4
-      with:
-        host: ${{ secrets.FTP_HOST }}
-        username: ${{ secrets.FTP_ID }}
-        password: ${{ secrets.FTP_PW }}
-        port: 22
-        script: |
-          cd www
-          git pull
+      - name: deploy start slack noti
+        if: always()
+        uses: 8398a7/action-slack@v3
+        with:
+          status: custom
+          icon_url: 'https://ca.slack-edge.com/T4CFRP1BL-U0187TAJKHQ-ee81477b3311-512'
+          custom_payload: |
+            {
+              type: 'mrkdwn', 
+              text: ':rocket: 법무사넷 페이지 배포 시작 되었습니다!! | <https://github.com/dolligo123/beopmusa/actions|GITHUB ACTION>'
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
+      - name: 🚚 Get latest code
+        uses: appleboy/ssh-action@v0.1.4
+        with:
+          host: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_ID }}
+          password: ${{ secrets.FTP_PW }}
+          port: 22
+          script: |
+            cd www
+            git pull
+      - name: action-slack
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          author_name: 법무사넷 페이지 deploy ${{ job.status }} # default: 8398a7@action-slack
+          fields: repo,message,commit,author,action,eventName,ref,workflow,job,took
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
+        if: always() # Pick up events even if the job fails or is canceled.
