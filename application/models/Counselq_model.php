@@ -52,6 +52,7 @@ class counselq_model extends CI_Model
 															,LPAD('*', CHAR_LENGTH(name) - 1, '*')
 													)
 											END AS name, title, fields, desc, 
+											name as realName, tel, title, desc, fields, call_time,
 											(select city_name from city b where b.city_code = a.city_code) city, 
 											(select district_name from district b where b.district_code = a.district_code) district, 
 											regist_date");
