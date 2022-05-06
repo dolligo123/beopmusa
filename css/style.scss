@@ -2431,6 +2431,9 @@ footer {
                   filter: brightness(200%);
           background-size: 10px;
         }
+        option{
+          color: $beopmusa-1;
+        }
         textarea {
           height: 6em;
           white-space: pre-line;
@@ -3528,13 +3531,10 @@ footer {
       position: relative;
       padding-left: 12px;
       margin-bottom: 8px;
+      color: $beopmusa-1;
+      font-size: 14px;
+      transition: 0.3s;
 
-      a{
-        display: block;
-        color: $beopmusa-1;
-        font-size: 14px;
-        transition: 0.3s;
-      }
       &::before{
         content: "";
         position: absolute;
@@ -3546,6 +3546,9 @@ footer {
         border-radius: 50%;
         background-color: $beopmusa-5;
       }
+      a{
+        display: block;
+      }
     }
   }
   @media (min-width: 1200px) {
@@ -3555,10 +3558,9 @@ footer {
       li{
         padding-left: 16px;
         margin-bottom: 20px;
+        font-size: 21px;
 
         a{
-          font-size: 21px;
-
           &:hover{
             color: $beopmusa-5;
           }
