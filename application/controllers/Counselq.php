@@ -11,6 +11,7 @@ class Counselq extends Parents
     $this->load->model("counselq_model");
     $this->load->model("manager_model");
     $this->load->library('common');
+    $this->load->library('email');
     date_default_timezone_set('Asia/Seoul');
   }
 
@@ -28,7 +29,10 @@ class Counselq extends Parents
       $param = $this->input->post(null, true);
       $param['regist_date'] = date("Y-m-d H:i:s");
       $param['update_date'] = date("Y-m-d H:i:s");
-      $this->counselq_model->create($param);
+      $id = $this->counselq_model->create($param);
+
+      // send sms, email
+      $this->sendsms($id);      
 
       $this->common->alert('상담 접수가 완료 되었습니다.', "/");
     else :
@@ -56,5 +60,70 @@ class Counselq extends Parents
     // output data json
     $this->output->set_content_type('text/json');
     $this->output->set_output(json_encode($data));
+  }
+
+  // 문자 보내기
+  private function sendsms($id)
+  {
+    // joinq
+    $param['where']['id'] = $id;
+    $counselq = $this->counselq_model->read($param);
+
+    // manager
+    unset($param);
+    $param['where']['ma_id'] = '1';
+    $manager = $this->manager_model->read($param);
+
+    $bp_name = "<h3>이름 : " . $counselq['data'][0]['realName'] . "</h3>";
+    $tel = "<h3>연락처 : " . $counselq['data'][0]['tel'] . "</h3>";
+    $local = "<h3>지역 : " . $counselq['data'][0]['city'] . " " . $counselq['data'][0]['district'] .  "</h3>";
+    $jq_desc = "<h3>상담 희망 분야 : " . $counselq['data'][0]['fields'] . "</h3>";
+    $jq_desc .= "<h3>상담 제목 : " . $counselq['data'][0]['title'] . "</h3>";
+    $jq_desc .= "<h3>상담 내용 : " . $counselq['data'][0]['desc'] . "</h3>";
+    $jq_desc .= "<h3>통화 가능 시간 : " . $counselq['data'][0]['call_time'] . "</h3>";
+
+    // 관리자 문자수신번호
+    $r_phone = $manager['data'][0]['tel_sms'];
+
+    if ($r_phone) {
+      $message = "<h2>[법무사넷] 상담문의가 도착했습니다.</h2>" .
+        $bp_name . $tel . $local . $jq_desc;
+
+      $title = "[법무사넷] 상담문의가 도착했습니다.";
+
+      if (ENVIRONMENT == 'production') :
+        $this->sendmail($counselq['data'][0]['name'], $title, $message, $manager['data'][0]['email']);
+        $this->sendmail($counselq['data'][0]['name'], $title, $message, 'abc@kumsolmedia.com');
+      else :
+        $this->sendmail($counselq['data'][0]['name'], $title, $message, 'kyudaddy@gmail.com');
+      endif;
+
+      $message = str_replace("<h3>", "", $message);
+      $message = str_replace("<h2>", "", $message);
+      $message = str_replace("</h3>", "\n", $message);
+      $message = str_replace("</h2>", "\n", $message);
+      if (ENVIRONMENT == 'production') :
+        $isuccess = $this->common->send_sms($r_phone, "010", "9564",  "2341", $message, "", "");
+      else:
+        $isuccess = $this->common->send_sms('01072713121', "010", "9564",  "2341", $message, "", "");
+      endif;
+      
+    }
+  }
+
+  // 메일 보내기
+  private function sendmail($name, $title, $message, $to_mail)
+  {
+    $config['mailtype'] = 'html';
+
+    $this->email->initialize($config);
+
+    $this->email->from($to_mail, $name);
+    $this->email->to($to_mail);
+
+    $this->email->subject($title);
+    $this->email->message($message);
+
+    $this->email->send();
   }
 }

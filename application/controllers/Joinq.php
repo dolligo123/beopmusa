@@ -70,16 +70,22 @@ class Joinq extends Parents
         $bp_name . $tel . $local . $jq_desc;
 
       $title = "[법무사넷] 가입문의가 도착했습니다.";
-      $this->sendmail($joinq['data'][0]['jq_name'], $title, $message, $manager['data'][0]['email']);
-      $this->sendmail($joinq['data'][0]['jq_name'], $title, $message, 'abc@kumsolmedia.com');
-      // $this->sendmail($joinq['data'][0]['tel'], $title, $message, 'kyudaddy@gmail.com');
+      if (ENVIRONMENT == 'production') :
+        $this->sendmail($joinq['data'][0]['jq_name'], $title, $message, $manager['data'][0]['email']);
+        $this->sendmail($joinq['data'][0]['jq_name'], $title, $message, 'abc@kumsolmedia.com');
+      else :
+        $this->sendmail($joinq['data'][0]['jq_name'], $title, $message, 'kyudaddy@gmail.com');
+      endif;      
 
       $message = str_replace("<h3>", "", $message);
       $message = str_replace("<h2>", "", $message);
       $message = str_replace("</h3>", "\n", $message);
       $message = str_replace("</h2>", "\n", $message);
-      // $isuccess = $this->common->send_sms('01072713121', "010", "9564",  "2341", $message, "", "");
-      $isuccess = $this->common->send_sms($r_phone, "010", "9564",  "2341", $message, "", "");
+      if (ENVIRONMENT == 'production') :
+        $isuccess = $this->common->send_sms($r_phone, "010", "9564",  "2341", $message, "", "");
+      else:
+        $isuccess = $this->common->send_sms('01072713121', "010", "9564",  "2341", $message, "", "");
+      endif;      
     }
   }
 
