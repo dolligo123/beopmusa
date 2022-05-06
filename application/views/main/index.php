@@ -637,8 +637,12 @@
     									'<div class="subway">', [
     										function() {
     											var retVal = '';
-    											if (val.subway1 && val.subway_line1 && !getParameter('keyword'))
-    												retVal += '<dl><dt><em class="line-' + val.subway_line1 + '">' + val.subway_name1 + '</em></dt><dd>' + val.subway1 + '</dd></dl>';
+    											for (let i = 1; i <= 5; i++) {
+    												if (val['subway' + i] && val['subway_line' + i] && !getParameter('keyword')) {
+    													retVal += '<dl><dt><em class="line-' + val['subway_line' + i] + '">' + val['subway_name' + i] + '</em></dt><dd>' + val['subway' + i] + '</dd></dl>';
+    												}
+    											}
+
     											return retVal;
     										}
     									]

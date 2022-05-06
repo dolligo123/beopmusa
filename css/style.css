@@ -2621,6 +2621,10 @@ footer .bottom .info-list .copyright {
   background-size: 10px;
 }
 
+.form-wrap .write-wrap .write-box li option {
+  color: #363636;
+}
+
 .form-wrap .write-wrap .write-box li textarea {
   height: 6em;
   white-space: pre-line;
@@ -3750,10 +3754,6 @@ footer .bottom .info-list .copyright {
   position: relative;
   padding-left: 12px;
   margin-bottom: 8px;
-}
-
-.news-wrap ul li a {
-  display: block;
   color: #363636;
   font-size: 14px;
   -webkit-transition: 0.3s;
@@ -3772,6 +3772,10 @@ footer .bottom .info-list .copyright {
   background-color: #BB9F66;
 }
 
+.news-wrap ul li a {
+  display: block;
+}
+
 @media (min-width: 1200px) {
   .news-wrap {
     margin-top: 80px;
@@ -3779,8 +3783,6 @@ footer .bottom .info-list .copyright {
   .news-wrap ul li {
     padding-left: 16px;
     margin-bottom: 20px;
-  }
-  .news-wrap ul li a {
     font-size: 21px;
   }
   .news-wrap ul li a:hover {

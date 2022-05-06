@@ -50,10 +50,10 @@
 				<div class="write-wrap">
 					<ul class="write-box">
 						<li class="pc">
-							<h3>법무사/상호명</h3>
+							<h3>법무사/상호명 *</h3>
 						</li>
 						<li>
-							<input type="text" placeholder="법무사명 입력해 주세요" name="bp_name" />
+							<input type="text" placeholder="법무사명 입력해 주세요" name="bp_name" required />
 						</li>
 						<li class="pc">
 							<h3>연락처 *</h3>

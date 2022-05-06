@@ -197,7 +197,7 @@
 				</div>
 				<form action="/beopmusa">
 					<div class="search-block">
-						<input type="text" name="keyword" placeholder="중요시설/지역명/지하철역명으로 바로찾기!"><button class="icon">검색</button>
+						<input type="text" name="keyword" placeholder="상호/상담분야/지역명/지하철역으로 바로찾기!"><button class="icon">검색</button>
 					</div>
 				</form>
 			</div>
