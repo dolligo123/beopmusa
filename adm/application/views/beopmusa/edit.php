@@ -8,7 +8,7 @@
           <h1>법무사 상세 페이지</h1>
           <dl>
             <dt class="essential">
-              <h1>법무사명</h1>
+              <h1>상호명</h1>
             </dt>
             <dd>
               <input type="text" name="title" placeholder="법무사명을 입력하세요." value="<?= $beopmusa['title'] ?>" required />
@@ -40,7 +40,7 @@
           </dl>
           <dl>
             <dt>
-              <h1>태그</h1>
+              <h1>주요업무분야(해시태그)</h1>
             </dt>
             <dd>
               <input type="text" name="tags" placeholder="ex)법무사, 침, 뜸" value="<?= $beopmusa['tags'] ?>" />
@@ -54,25 +54,6 @@
               <input type="text" name="sub_name" placeholder="지점명을 입력하세요." value="<?= $beopmusa['sub_name'] ?>" />
             </dd>
           </dl>
-          <dl>
-            <dt class="essential">
-              <h1>야간진료여부</h1>
-            </dt>
-            <dd>
-              <input type="radio" value="0" name="isnight" require <?php if ($beopmusa['isnight'] == '0') echo 'checked'; ?> /> 불가능
-              <input type="radio" value="1" name="isnight" require <?php if ($beopmusa['isnight'] == '1') echo 'checked'; ?> /> 가능
-            </dd>
-          </dl>
-          <dl>
-            <dt class="essential">
-              <h1>일요진료여부</h1>
-            </dt>
-            <dd>
-              <input type="radio" value="0" name="issunday" require <?php if ($beopmusa['issunday'] == '0') echo 'checked'; ?> /> 불가능
-              <input type="radio" value="1" name="issunday" require <?php if ($beopmusa['issunday'] == '1') echo 'checked'; ?> /> 가능
-            </dd>
-          </dl>
-
           <dl>
             <dt class="essential">
               <h1>도로명주소</h1>
@@ -135,42 +116,42 @@
           </dl>
           <dl>
             <dt>
-              <h1>홈페이지</h1>
+              <h1>홈페이지 URL</h1>
             </dt>
             <dd>
-              <input type="text" name="homepage" placeholder="홈페이지 입력하세요." value="<?= $beopmusa['homepage'] ?>" />
+              <input type="text" name="homepage" placeholder="홈페이지 URL 입력하세요." value="<?= $beopmusa['homepage'] ?>" />
             </dd>
           </dl>
           <dl>
             <dt>
-              <h1>블로그</h1>
+              <h1>블로그 URL</h1>
             </dt>
             <dd>
-              <input type="text" name="blog" placeholder="블로그 입력하세요." value="<?= $beopmusa['blog'] ?>" />
+              <input type="text" name="blog" placeholder="블로그 URL 입력하세요." value="<?= $beopmusa['blog'] ?>" />
             </dd>
           </dl>
           <dl>
             <dt>
-              <h1>카카오</h1>
+              <h1>카카오 톡 링크</h1>
             </dt>
             <dd>
-              <input type="text" name="kakao" placeholder="카카오 입력하세요." value="<?= $beopmusa['kakao'] ?>" />
+              <input type="text" name="kakao" placeholder="카카오 톡 링크 입력하세요." value="<?= $beopmusa['kakao'] ?>" />
             </dd>
           </dl>
           <dl>
             <dt>
-              <h1>네이버</h1>
+              <h1>네이버 톡톡 링크</h1>
             </dt>
             <dd>
-              <input type="text" name="naver" placeholder="네이버 입력하세요." value="<?= $beopmusa['naver'] ?>" />
+              <input type="text" name="naver" placeholder="네이버 톡톡 링크 입력하세요." value="<?= $beopmusa['naver'] ?>" />
             </dd>
           </dl>
           <dl>
             <dt>
-              <h1>법무사</h1>
+              <h1>대표법무사명</h1>
             </dt>
             <dd>
-              <input type="text" name="owner" placeholder="법무사명 입력하세요." value="<?= $beopmusa['owner'] ?>" />
+              <input type="text" name="owner" placeholder="대표법무사명 입력하세요." value="<?= $beopmusa['owner'] ?>" />
             </dd>
           </dl>
 
@@ -208,7 +189,7 @@
 
           <dl>
             <dt>
-              <h1>소개이미지(권장:XXX*XXXpx)</h1>
+              <h1>소개이미지(권장: 세로 무제한 * 가로 사이즈 1168px 넘지 않도록)</h1>
             </dt>
             <dd>
               <ul class="add-list clearfx">
@@ -231,7 +212,7 @@
 
           <dl>
             <dt>
-              <h1>법무사설명</h1>
+              <h1>업체소개글</h1>
             </dt>
             <dd>
               <textarea name="hp_desc" rows="5" placeholder="내용을 입력하세요."><?= $beopmusa['hp_desc'] ?></textarea>
@@ -378,8 +359,8 @@
                     	';
 
 
-              echo '야간진료함 <input type="radio" name="' . $arr_eng[$k] . '_isnight' . '" value="1" ' . ($beopmusa[$arr_eng[$k] . '_isnight'] == '1' ? 'checked' : '') . ' />';
-              echo '야간진료안함 <input type="radio" name="' . $arr_eng[$k] . '_isnight' . '" value="0" ' . ($beopmusa[$arr_eng[$k] . '_isnight'] == '0' ? 'checked' : '') . ' />';
+              // echo '야간진료함 <input type="radio" name="' . $arr_eng[$k] . '_isnight' . '" value="1" ' . ($beopmusa[$arr_eng[$k] . '_isnight'] == '1' ? 'checked' : '') . ' />';
+              // echo '야간진료안함 <input type="radio" name="' . $arr_eng[$k] . '_isnight' . '" value="0" ' . ($beopmusa[$arr_eng[$k] . '_isnight'] == '0' ? 'checked' : '') . ' />';
 
               echo '
                     	</dd>
@@ -429,8 +410,8 @@
           </dl>
 
           <dl>
-            <dt class="essential">
-              <h1>뉴스1</h1>
+            <dt>
+              <h1>공지및뉴스1</h1>
             </dt>
             <dd>
               <input type="text" style="width:40%" name="news_url1" value="<?= $beopmusa['news_url1'] ?>"  placeholder="뉴스1 url 을 입력하세요" />
@@ -439,8 +420,8 @@
           </dl>   
           
           <dl>
-            <dt class="essential">
-              <h1>뉴스2</h1>
+            <dt>
+              <h1>공지및뉴스2</h1>
             </dt>
             <dd>
               <input type="text" style="width:40%" name="news_url2" value="<?= $beopmusa['news_url2'] ?>"  placeholder="뉴스2 url 을 입력하세요" />
@@ -449,8 +430,8 @@
           </dl> 
           
           <dl>
-            <dt class="essential">
-              <h1>뉴스3</h1>
+            <dt>
+              <h1>공지및뉴스3</h1>
             </dt>
             <dd>
               <input type="text" style="width:40%" name="news_url3" value="<?= $beopmusa['news_url3'] ?>"  placeholder="뉴스3 url 을 입력하세요" />

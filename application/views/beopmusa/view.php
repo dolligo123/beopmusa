@@ -42,7 +42,7 @@
 		</div>
 
 		<div class="office-name-wrap">
-			<h3><?= $data[0]['owner'] ?> 법무사</h3>
+			<h3><?= $data[0]['title'] ?></h3>
 			<ul class="location">
 				<li><?= $data[0]['city_name'] ?> <?= $data[0]['district_name'] ?></li>
 				<li><?= $data[0]['sub_name'] ?></li>
@@ -129,10 +129,14 @@
 					<h2 class="section-tit">공지 및 뉴스</h2>
 					<ul>
 						<?php
-						if ($data[0]['news_url1']) echo '<li><a href="' . $data[0]['news_url1'] . '" target="_blank">' . $data[0]['news_title1'] . '</a></li>';
-						if ($data[0]['news_url2']) echo '<li><a href="' . $data[0]['news_url2'] . '" target="_blank">' . $data[0]['news_title2'] . '</a></li>';
-						if ($data[0]['news_url3']) echo '<li><a href="' . $data[0]['news_url3'] . '" target="_blank">' . $data[0]['news_title3'] . '</a></li>';
-						?>
+						if ($data[0]['news_url1'] && $data[0]['news_title1']) echo '<li><a href="' . $data[0]['news_url1'] . '" target="_blank">' . $data[0]['news_title1'] . '</a></li>';
+						else if ($data[0]['news_title1']) echo '<li>' . $data[0]['news_title1'] . '</li>';
+
+						if ($data[0]['news_url2'] && $data[0]['news_title2']) echo '<li><a href="' . $data[0]['news_url2'] . '" target="_blank">' . $data[0]['news_title2'] . '</a></li>';
+						else if ($data[0]['news_title2']) echo '<li>' . $data[0]['news_title2'] . '</li>';
+
+						if ($data[0]['news_url3'] && $data[0]['news_title3']) echo '<li><a href="' . $data[0]['news_url3'] . '" target="_blank">' . $data[0]['news_title3'] . '</a></li>';
+						else if ($data[0]['news_title3']) echo '<li>' . $data[0]['news_title3'] . '</li>';						?>
 					</ul>
 				</div>
 			<?php endif; ?>
@@ -149,8 +153,8 @@
 					</thead>
 					<tbody>
 						<?php
-						$arr_day = array("월", "화", "수", "목", "금", "토", "일");
-						$arr_eng = array("mon", "tue", "wed", "thu", "fri", "sat", "sun");
+						$arr_day = array("월", "화", "수", "목", "금", "토");
+						$arr_eng = array("mon", "tue", "wed", "thu", "fri", "sat");
 						$k = 0;
 						foreach ($arr_eng as $val) :
 							if ($data[0][$val . '_open'] || $data[0][$val . '_close']) :
@@ -455,7 +459,7 @@
 				</div>
 				<form action="/beopmusa">
 					<div class="search-block">
-						<input type="text" name="keyword" placeholder="중요시설/지역명/지하철역명으로 바로찾기!"><button class="icon">검색</button>
+						<input type="text" name="keyword" placeholder="상호/상담분야/지역명/지하철역으로 바로찾기!"><button class="icon">검색</button>
 					</div>
 				</form>
 			</div>
@@ -478,7 +482,7 @@
 		//갤러리 스와이퍼
 		var galleryThumbs = new Swiper('.gallery-thumbs', {
 			slidesPerView: 2.1,
-			slidesPerColumn: 2,
+			slidesPerColumn: 6,
 			watchSlidesVisibility: true,
 			watchSlidesProgress: true
 		});
