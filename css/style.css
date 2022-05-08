@@ -3504,6 +3504,8 @@ footer .bottom .info-list .copyright {
   color: #565656;
   font-size: 12px;
   margin-bottom: 6px;
+  text-align: left;
+  line-height: 1.3;
 }
 
 .office-info-wrap .right {
