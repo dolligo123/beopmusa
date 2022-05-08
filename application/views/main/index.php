@@ -705,6 +705,7 @@
     	var swiper = new Swiper('.receipt-swiper', {
     		direction: 'vertical',
     		slidesPerView: 8,
+				loop: true,
     		autoplay: {
     			delay: 2500,
     			disableOnInteraction: false,

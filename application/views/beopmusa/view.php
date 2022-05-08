@@ -153,8 +153,8 @@
 					</thead>
 					<tbody>
 						<?php
-						$arr_day = array("월", "화", "수", "목", "금", "토");
-						$arr_eng = array("mon", "tue", "wed", "thu", "fri", "sat");
+						$arr_day = array("월", "화", "수", "목", "금", "토", "일");
+						$arr_eng = array("mon", "tue", "wed", "thu", "fri", "sat", "sun");
 						$k = 0;
 						foreach ($arr_eng as $val) :
 							if ($data[0][$val . '_open'] || $data[0][$val . '_close']) :
@@ -171,7 +171,7 @@
 								echo "
 				                    <tr>
 				                        <th>{$arr_day[$k]}요일</th>
-				                        <td colspan='2'>휴진일</td>
+				                        <td colspan='2'>휴무</td>
 				                    </tr>						   			
 					   			";
 							endif;
