@@ -49,6 +49,8 @@ class Main extends Parents
 
     // counselq
     unset($param);
+    $param['start'] = 0;
+    $param['length'] = 30;
     $param['orderby'] = 'regist_date';
     $param['sort'] = 'desc';
 
