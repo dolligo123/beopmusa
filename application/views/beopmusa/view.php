@@ -159,7 +159,7 @@
 						foreach ($arr_eng as $val) :
 							if ($data[0][$val . '_open'] || $data[0][$val . '_close']) :
 								$isnight = "";
-								if ($data[0][$val . '_isnight']) $isnight = '<strong>야간진료</strong>';
+								// if ($data[0][$val . '_isnight']) $isnight = '<strong>야간진료</strong>';
 								echo "
 				                    <tr>
 				                        <th>{$arr_day[$k]}요일</th>
