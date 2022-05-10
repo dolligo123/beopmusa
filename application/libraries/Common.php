@@ -15,7 +15,7 @@ class Common
 	{
 		$str = '';
 		if ($cur_page > 1) {
-			$str .= '<a href="?page=1" data-field="page" data-val="1" class="csspage">처음</a>' . PHP_EOL;
+			$str .= '<a href="?page=1" data-field="page" data-val="1" class="csspage icon prev"></a>' . PHP_EOL;
 		}
 
 		$start_page = (((int)(($cur_page - 1) / $page_size)) * $page_size) + 1;
@@ -37,7 +37,7 @@ class Common
 		if ($total_page > $end_page) $str .= '<a href="?page=' . ($end_page + 1) . '" data-field="page" data-val="' . ($end_page + 1) . '" class="next csspage">다음</a>' . PHP_EOL;
 
 		if ($cur_page < $total_page) {
-			$str .= '<a href="?page=' . $total_page . '" data-field="page" data-val="' . $total_page . '" class="csspage">맨끝</a>' . PHP_EOL;
+			$str .= '<a href="?page=' . $total_page . '" data-field="page" data-val="' . $total_page . '" class="csspage icon next"></a>' . PHP_EOL;
 		}
 
 		if ($str)
