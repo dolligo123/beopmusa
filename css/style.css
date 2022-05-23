@@ -699,7 +699,6 @@ header .tel-btn a.naver {
     position: relative;
     margin: 0 45px;
     text-align: center;
-    overflow: hidden;
   }
   header .lg-header .gnb > ul > li:hover {
     overflow: visible;
@@ -722,26 +721,44 @@ header .tel-btn a.naver {
     margin-right: 100px;
   }
   header .lg-header .gnb > ul > li:first-child .oneD {
+    position: relative;
     font-family: 'MaruBuri';
+    padding: 0 0 0 28px;
+    background-color: #3A4D62;
+  }
+  header .lg-header .gnb > ul > li:first-child .oneD:hover {
+    border-bottom: none;
+  }
+  header .lg-header .gnb > ul > li:first-child .oneD::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    right: -60px;
+    bottom: 0;
+    display: inline-block;
+    border: 60px solid transparent;
+    border-top-width: 0;
+    border-bottom-color: #3A4D62;
   }
   header .lg-header .gnb > ul > li:first-child .oneD span {
+    color: #fff;
     font-weight: 500;
-    font-size: 19px;
+    font-size: 18px;
   }
   header .lg-header .gnb > ul > li:first-child .oneD strong {
     position: relative;
-    font-size: 25px;
-    color: #86694B;
+    font-size: 20px;
+    color: yellow;
     margin: 0 10px 0 6px;
   }
   header .lg-header .gnb > ul > li:first-child .oneD .border {
     display: inline-block;
     margin-left: 4px;
     color: #fff;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
-    color: #BB9F66;
-    border: 3px solid #BB9F66;
+    color: yellow;
+    border: 2px solid yellow;
     border-radius: 20px;
     padding: 2px 6px 2px 6px;
     line-height: 1;
@@ -753,7 +770,7 @@ header .tel-btn a.naver {
     top: 60px;
     left: calc(50% - 100px);
     width: 200px;
-    background-color: #fff;
+    background-color: #3A4D62;
     -webkit-transition: 0.3s;
     transition: 0.3s;
     padding: 26px 0;
@@ -774,14 +791,14 @@ header .tel-btn a.naver {
   }
   header .lg-header .gnb > ul > li .twoD li a {
     font-weight: bold;
+    color: #fff;
   }
   header .lg-header .gnb > ul > li .twoD li a:hover {
-    color: #BB9F66;
+    color: yellow;
   }
   header .lg-header .gnb > ul > li .twoD.city {
     left: calc(50% - 100vw/2 + 413px);
     width: 100vw;
-    border-top: 1px solid #e1e1e1;
   }
   header .lg-header .gnb > ul > li .twoD.city ul {
     display: -webkit-box;
