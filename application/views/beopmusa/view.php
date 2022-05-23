@@ -451,7 +451,7 @@
 			</div>
 		</div>
 
-		<div class="search-wrap">
+		<!-- <div class="search-wrap">
 			<div class="container">
 				<div class="title">
 					<h4>원하시는 검색 결과를 다시 빠르게 찾길 원하신다면</h4>
@@ -463,7 +463,7 @@
 					</div>
 				</form>
 			</div>
-		</div>
+		</div> -->
 
 		<?php if ($data[0]['kakao'] || $data[0]['naver']) : ?>
 			<div class="quick-button-wrap">
