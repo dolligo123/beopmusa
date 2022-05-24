@@ -39,11 +39,20 @@
 					<?php if ($data[0]['blog']) : ?>
 						<a href="<?= $data[0]['blog'] ?>" class="icon blog on" target="_blank">블로그</a>
 					<?php endif; ?>
+					<?php if ($data[0]['reserve_url']) : ?>
+						<a href="<?= $data[0]['reserve_url'] ?>" class="icon booking on" target="_blank">네이버 예약</a>
+					<?php endif; ?>
 				</div>
 				<dl>
-					<dt>전화번호</dt>
+					<dt>대표번호</dt>
 					<dd class="tel"><a href="tel:<?= $data[0]['tel'] ?>"><?= $data[0]['tel'] ?></a></dd>
 				</dl>
+				<?php if ($data[0]['reserve_url']) : ?>
+					<dl>
+						<dt>빠른상담</dt>
+						<dd class="tel"><a href="tel:<?= $data[0]['mobile'] ?>"><?= $data[0]['mobile'] ?></a></dd>
+					</dl>
+				<?php endif; ?>
 				<dl>
 					<dt>지하철</dt>
 					<dd>
@@ -434,6 +443,7 @@
 				<?php
 				if ($data[0]['kakao']) echo '<li><a href="' . $data[0]['kakao'] . '" target="_blank"><span class="icon kakao"></span><span class="text">카카오톡</span></a></li>';
 				if ($data[0]['naver']) echo '<li><a href="' . $data[0]['naver'] . '" target="_blank"><span class="icon naver"></span><span class="text">네이버톡톡</span></a></li>';
+				if ($data[0]['reserve_url']) echo '<li><a href="' . $data[0]['reserve_url'] . '" target="_blank"><span class="icon naverbooking"></span><span class="text">네이버예약</span></a></li>';
 				?>
 			</ul>
 		</div>

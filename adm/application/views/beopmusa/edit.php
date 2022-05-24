@@ -148,6 +148,14 @@
           </dl>
           <dl>
             <dt>
+              <h1>예약 url</h1>
+            </dt>
+            <dd>
+              <input type="text" name="reserve_url" placeholder="예약 url 링크 입력하세요." value="<?= $beopmusa['reserve_url'] ?>" />
+            </dd>
+          </dl>          
+          <dl>
+            <dt>
               <h1>대표법무사명</h1>
             </dt>
             <dd>
@@ -162,7 +170,7 @@
             <dd>
               <textarea name="owner_intro" rows="5" placeholder="간략설명 입력하세요."><?= $beopmusa['owner_intro'] ?></textarea>
             </dd>
-          </dl>          
+          </dl>
 
           <dl>
             <dt>
@@ -208,7 +216,7 @@
                 </li>
               </ul>
             </dd>
-          </dl>          
+          </dl>
 
           <dl>
             <dt>
@@ -228,14 +236,20 @@
           </dl>
           <dl>
             <dt>
+              <h1>핸드폰번호</h1>
+            </dt>
+            <dd>
+              <input type="text" name="mobile" placeholder="핸드폰번호 입력하세요." value="<?= $beopmusa['mobile'] ?>" />
+            </dd>
+          </dl>
+          <dl>
+            <dt>
               <h1>오시는길 설명</h1>
             </dt>
             <dd>
               <textarea name="addr_desc" rows="5" placeholder="오시는길 입력하세요."><?= $beopmusa['addr_desc'] ?></textarea>
             </dd>
           </dl>
-
-
           <dl>
             <dt>
               <h1>지하철명/호선</h1>
@@ -414,30 +428,30 @@
               <h1>공지및뉴스1</h1>
             </dt>
             <dd>
-              <input type="text" style="width:40%" name="news_url1" value="<?= $beopmusa['news_url1'] ?>"  placeholder="뉴스1 url 을 입력하세요" />
+              <input type="text" style="width:40%" name="news_url1" value="<?= $beopmusa['news_url1'] ?>" placeholder="뉴스1 url 을 입력하세요" />
               <input type="text" style="width:50%" name="news_title1" value="<?= $beopmusa['news_title1'] ?>" placeholder="뉴스1 제목 입력하세요" />
             </dd>
-          </dl>   
-          
+          </dl>
+
           <dl>
             <dt>
               <h1>공지및뉴스2</h1>
             </dt>
             <dd>
-              <input type="text" style="width:40%" name="news_url2" value="<?= $beopmusa['news_url2'] ?>"  placeholder="뉴스2 url 을 입력하세요" />
-              <input type="text" style="width:50%" name="news_title2" value="<?= $beopmusa['news_title2'] ?>"  placeholder="뉴스2 제목 입력하세요" />
+              <input type="text" style="width:40%" name="news_url2" value="<?= $beopmusa['news_url2'] ?>" placeholder="뉴스2 url 을 입력하세요" />
+              <input type="text" style="width:50%" name="news_title2" value="<?= $beopmusa['news_title2'] ?>" placeholder="뉴스2 제목 입력하세요" />
             </dd>
-          </dl> 
-          
+          </dl>
+
           <dl>
             <dt>
               <h1>공지및뉴스3</h1>
             </dt>
             <dd>
-              <input type="text" style="width:40%" name="news_url3" value="<?= $beopmusa['news_url3'] ?>"  placeholder="뉴스3 url 을 입력하세요" />
-              <input type="text" style="width:50%" name="news_title3" value="<?= $beopmusa['news_title3'] ?>"  placeholder="뉴스3 제목 입력하세요" />
+              <input type="text" style="width:40%" name="news_url3" value="<?= $beopmusa['news_url3'] ?>" placeholder="뉴스3 url 을 입력하세요" />
+              <input type="text" style="width:50%" name="news_title3" value="<?= $beopmusa['news_title3'] ?>" placeholder="뉴스3 제목 입력하세요" />
             </dd>
-          </dl>           
+          </dl>
 
         </div>
         <div class="submit-wrap">

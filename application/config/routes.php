@@ -56,6 +56,7 @@ $route['city'] = 'city/index';
 $route['article'] = 'article/index';
 $route['notice'] = 'notice/index';
 $route['joinq'] = 'joinq/index';
+$route['counselq'] = 'counselq/index';
 $route['task'] = 'task/index';
 $route['insure'] = 'insure/index';
 $route['beopmusa'] = 'beopmusa/index';
