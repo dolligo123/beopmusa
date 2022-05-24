@@ -630,6 +630,7 @@ header {
             position: relative;
             margin: 0 45px;
             text-align: center;
+            overflow: hidden;
 
             &:hover {
               overflow: visible;
@@ -651,7 +652,8 @@ header {
 
             &:first-child {
               margin-left: 0;
-              margin-right: 100px;
+              margin-right: 0;
+              padding-right: 100px;
               
               .oneD {
                 position: relative;
@@ -742,7 +744,7 @@ header {
               }
 
               &.city {
-                left: calc(50% - 100vw/2 + 413px);
+                left: calc(50% - 100vw/2 + 363px);
                 width: 100vw;
 
                 ul{
@@ -3395,6 +3397,12 @@ footer {
         &.blog {
           background-image: url(../images/icon-blog.svg);
         }
+        &.booking {
+          background-image: url(../images/icon-booking.svg);
+          height: 27px;
+          width: 70px;
+          border-radius: 0;
+        }
 
         &.on {
           -webkit-filter: grayscale(0);
@@ -3833,6 +3841,9 @@ footer {
           }
           &.naver{
             background-image: url(../images/icon-navertalk.svg);
+          }
+          &.naverbooking{
+            background-image: url(../images/icon-naver-booking.svg);
           }
         }
         .text{

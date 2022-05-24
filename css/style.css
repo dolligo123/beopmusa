@@ -699,6 +699,7 @@ header .tel-btn a.naver {
     position: relative;
     margin: 0 45px;
     text-align: center;
+    overflow: hidden;
   }
   header .lg-header .gnb > ul > li:hover {
     overflow: visible;
@@ -718,7 +719,8 @@ header .tel-btn a.naver {
   }
   header .lg-header .gnb > ul > li:first-child {
     margin-left: 0;
-    margin-right: 100px;
+    margin-right: 0;
+    padding-right: 100px;
   }
   header .lg-header .gnb > ul > li:first-child .oneD {
     position: relative;
@@ -797,7 +799,7 @@ header .tel-btn a.naver {
     color: yellow;
   }
   header .lg-header .gnb > ul > li .twoD.city {
-    left: calc(50% - 100vw/2 + 413px);
+    left: calc(50% - 100vw/2 + 363px);
     width: 100vw;
   }
   header .lg-header .gnb > ul > li .twoD.city ul {
@@ -3626,6 +3628,13 @@ footer .bottom .info-list .copyright {
   background-image: url(../images/icon-blog.svg);
 }
 
+.office-info-wrap .right .link-btns a.booking {
+  background-image: url(../images/icon-booking.svg);
+  height: 27px;
+  width: 70px;
+  border-radius: 0;
+}
+
 .office-info-wrap .right .link-btns a.on {
   -webkit-filter: grayscale(0);
   filter: grayscale(0);
@@ -4078,6 +4087,10 @@ footer .bottom .info-list .copyright {
 
 .quick-button-wrap ul li a .icon.naver {
   background-image: url(../images/icon-navertalk.svg);
+}
+
+.quick-button-wrap ul li a .icon.naverbooking {
+  background-image: url(../images/icon-naver-booking.svg);
 }
 
 .quick-button-wrap ul li a .text {
