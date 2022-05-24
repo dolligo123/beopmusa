@@ -458,6 +458,7 @@
 		watchSlidesVisibility: true,
 		watchSlidesProgress: true
 	});
+	
 	var galleryTop = new Swiper('.gallery-top', {
 		spaceBetween: 10,
 		navigation: {
