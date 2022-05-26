@@ -350,6 +350,18 @@ header {
           font-size: 11px;
           text-indent: 8px;
           background-color: transparent;
+          &::-webkit-input-placeholder{
+            color: #d4d4d4;
+          }
+          &::-moz-placeholder{
+            color: #d4d4d4;
+          }
+          &:-ms-input-placeholder{
+            color: #d4d4d4;
+          }
+          &::-ms-input-placeholder{
+            color: #d4d4d4;
+          }
           &::placeholder{
             color: #d4d4d4;
           }
@@ -842,7 +854,6 @@ footer {
       }
     }
   }
-  
   /*데스크탑*/
   @media (min-width: 1200px) {
     text-align: left;
@@ -888,8 +899,97 @@ footer {
       }
     }
   }
+
+  .footer-logo-swiper{
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-top: 1px solid #DFDFDF;
+    border-bottom: 1px solid #DFDFDF;
+    height: 50px;
+
+    .swiper-wrapper{
+      height: auto;
+      transition-timing-function : linear;
+
+      .swiper-slide{
+        width: auto;
+        height: auto;
+        margin: 0 24px;
+
+        a{
+          display: block;
+          img{
+            display: block;
+            height: 24px;
+          }
+        }
+      }
+    }
+    /*데스크탑*/
+    @media (min-width: 1200px) {
+      height: 80px;
+
+      .swiper-wrapper{
+        .swiper-slide{  
+          margin: 0 32px;
+
+          a{
+            img{
+              height: 34px;
+            }
+          }
+        }
+      }
+    }
+  }
+  
 }
 
+.footer-quick {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #333;
+  padding: 20px 8px;
+  z-index: 10;
+
+  a {
+    color: #fff;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 25px;
+    width: 33.33%;
+
+    .icon {
+      width: 25px;
+      height: 25px;
+      vertical-align: middle;
+      margin-right: 6px;
+      &.naver {
+        background-image: url(../images/icon-footer-navertalk.svg);
+      }
+      &.kakao {
+        background-image: url(../images/icon-footer-kakaotalk.svg);
+      }
+      &.sms {
+        background-image: url(../images/icon-footer-sms.svg);
+      }
+    }
+  }
+
+  /*데스크탑*/
+  @media (min-width: 1200px) {
+    display: none;
+  }
+  
+}
 
 /*개인정보수집 팝업====================================================*/
 #privacy_pop {
@@ -1238,6 +1338,22 @@ footer {
       width: 100%;
       font-size: 13px;
       background-color: #fff;
+
+      &::-webkit-input-placeholder{
+        color: #d4d4d4;
+      }
+
+      &::-moz-placeholder{
+        color: #d4d4d4;
+      }
+
+      &:-ms-input-placeholder{
+        color: #d4d4d4;
+      }
+
+      &::-ms-input-placeholder{
+        color: #d4d4d4;
+      }
 
       &::placeholder{
         color: #d4d4d4;
@@ -1662,6 +1778,18 @@ footer {
           font-size: 25px;
           text-indent: 24px;
           background-color: #fff;
+          &::-webkit-input-placeholder{
+            color: #d4d4d4;
+          }
+          &::-moz-placeholder{
+            color: #d4d4d4;
+          }
+          &:-ms-input-placeholder{
+            color: #d4d4d4;
+          }
+          &::-ms-input-placeholder{
+            color: #d4d4d4;
+          }
           &::placeholder{
             color: #d4d4d4;
           }
@@ -1827,8 +1955,10 @@ footer {
             img{
               display: block;
               width: inherit;
-              object-fit: cover;
-              object-position: center;
+              -o-object-fit: cover;
+                 object-fit: cover;
+              -o-object-position: center;
+                 object-position: center;
             }
           }
           .tag-block{
@@ -2643,6 +2773,22 @@ footer {
             padding: 12px 20px;
             border-radius: 6px;
 
+            &::-webkit-input-placeholder{
+              opacity: 0.6;
+            }
+
+            &::-moz-placeholder{
+              opacity: 0.6;
+            }
+
+            &:-ms-input-placeholder{
+              opacity: 0.6;
+            }
+
+            &::-ms-input-placeholder{
+              opacity: 0.6;
+            }
+
             &::placeholder{
               opacity: 0.6;
             }
@@ -3378,14 +3524,14 @@ footer {
     }
     .link-btns {
       text-align: center;
-      margin: 12px 0 20px;
+      margin: 20px 0;
 
       a {
         display: inline-block;
         width: 30px;
         height: 30px;
         border-radius: 50%;
-        margin: 0 3px;
+        margin: 0 5px;
         -webkit-filter: grayscale(1);
         filter: grayscale(1);
         vertical-align: middle;
@@ -3399,8 +3545,8 @@ footer {
         }
         &.booking {
           background-image: url(../images/icon-booking.svg);
-          height: 27px;
-          width: 70px;
+          height: 23px;
+          width: 56px;
           border-radius: 0;
         }
 
@@ -3453,7 +3599,12 @@ footer {
         a {
           width: 45px;
           height: 45px;
-          margin: 0 8px 0 0;
+          margin: 0 12px 0 0;
+
+          &.booking {
+            height: 27px;
+            width: 70px;
+          }
         }
       }
 
@@ -3803,6 +3954,7 @@ footer {
   }
 }
 .quick-button-wrap{
+  position: -webkit-sticky;
   position: sticky;
   z-index: 100;
   bottom: 0;
@@ -4346,5 +4498,100 @@ footer {
   @media (min-width: 1200px) {
     font-size: 18px;
     padding: 4em 0 6em;
+  }
+}
+
+/*스카이 스크래퍼===================================================*/
+/*데스크탑*/
+
+.skyscraper-wrap{
+  display: none;
+
+  @media (min-width: 1200px) {
+    position: fixed;
+    z-index: 100;
+    top: 250px;
+    right: calc(50% - 1200px/2 - 140px - 40px);
+    background-color: #fff;
+    padding: 8px;
+    border-radius: 100px;
+    box-shadow: -6px 0 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    overflow: hidden;
+
+    ul{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      li{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 16px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid #d9d9d9;
+
+        &:last-child{
+          border-bottom: none;
+        }
+        &:first-child{
+          border-bottom: none;
+          padding-bottom: 0;
+        }
+
+        a{
+          > *{
+            vertical-align: middle;
+          }
+          .blue{
+            display: block;
+            width: 115px;
+            padding: 40px 0;
+            border-radius: 100px;
+            background-color: #3a4d62;
+            color: #fff;
+            font-size: 25px;
+            line-height: 1.2;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            box-shadow: inset -4px -3px 13px rgba(0,0,0,0.3);
+
+            strong{
+              font-weight: bold;
+            }
+          }
+          .icon{
+            width: 70px;
+            height: 70px;
+            margin-bottom: 8px;
+
+            &.icon-1{
+              background-image: url(../images/icon-skyscraper-1.svg);
+            }
+            &.icon-2{
+              background-image: url(../images/icon-skyscraper-2.svg);
+            }
+            &.icon-3{
+              background-image: url(../images/icon-skyscraper-3.svg);
+              height: 50px;
+            }
+            &.icon-4{
+              background-image: url(../images/icon-skyscraper-4.svg);
+              height: 50px;
+            }
+          }
+          .text{
+            display: block;
+            color: $beopmusa-2;
+            font-size: 17px;
+            font-weight: bold;
+            line-height: 1.2;
+          }
+        }
+      }
+    }
   }
 }
