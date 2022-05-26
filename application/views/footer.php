@@ -1,5 +1,34 @@
     <!--s:푸터-->
     <footer>
+      <div class="swiper-container swiper-container-free-mode footer-logo-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <a href="https://kjaar.kabl.kr/" target="_blank"><img src="../images/icon-logo-kabl.jpg" alt="대한법무사협회"></a>
+          </div>
+          <div class="swiper-slide">
+            <a href="http://www.iros.go.kr/PMainJ.jsp" target="_blank"><img src="../images/icon-logo-iros.jpg" alt="인터넷등기소"></a>
+          </div>
+          <div class="swiper-slide">
+            <a href="https://www.gov.kr/portal/main" target="_blank"><img src="../images/icon-logo-gov.jpg" alt="정부24"></a>
+          </div>
+          <div class="swiper-slide">
+            <a href="https://www.moleg.go.kr/" target="_blank"><img src="../images/icon-logo-moleg.jpg" alt="법제처"></a>
+          </div>
+          <div class="swiper-slide">
+            <a href="https://www.hometax.go.kr/" target="_blank"><img src="../images/icon-logo-hometax.jpg" alt="홈택스"></a>
+          </div>
+          <div class="swiper-slide">
+            <a href="http://www.eum.go.kr/" target="_blank"><img src="../images/icon-logo-eum.jpg" alt="토지이음"></a>
+          </div>
+          <div class="swiper-slide">
+            <a href="http://www.wetax.go.kr/" target="_blank"><img src="../images/icon-logo-wetax.jpg" alt="wetax"></a>
+          </div>
+          <div class="swiper-slide">
+            <a href="https://irts.molit.go.kr/" target="_blank"><img src="../images/icon-logo-irts.jpg" alt="국토교통부 부동산거래 전자계약시스템"></a>
+          </div>
+        </div>
+      </div>
+
       <div class="top">
         <div class="container">
           <ul>
@@ -137,6 +166,27 @@
     </div>
     <!--e:팝업창 추가-->
 
+    <!--s:스카이 스크래퍼 추가-->
+    <div class="skyscraper-wrap">
+      <ul>
+        <li>
+          <a href="/counselq"><span class="blue">법무사<br />연락받기<br /><strong>신청</strong></span></a>
+        </li>
+        <li>
+          <a href="<?= $this->dinfo['manager']['kakaotok'] ?>" target="_blank"><span class="icon icon-1"></span><span class="text">카톡상담</span></a>
+        </li>
+        <li>
+          <a href="<?= $this->dinfo['manager']['navertok'] ?>" target="_blank"><span class="icon icon-2"></span><span class="text">톡톡상담</span></a>
+        </li>
+        <li>
+          <a href="tel:<?= $this->dinfo['manager']['tel_quick'] ?>"><span class="icon icon-3"></span><span class="text">빠른<br />전화상담</span></a>
+        </li>
+        <li>
+          <a href=/beopmusa><span class="icon icon-4"></span><span class="text">내지역<br />법무사찾기</span></a>
+        </li>
+      </ul>
+    </div>
+    <!--e:스카이 스크래퍼 추가-->
 
     <!--s:스피너 추가 off 클래스 추가 -->
     <div class="layer-wrap off" id="spinner">
@@ -149,8 +199,13 @@
     </div>
     <!--e:스피너 추가-->
 
-
+    <!--s:하단 퀵버튼 추가(업체 상세 페이지 제외)-->
+    <div class="footer-quick clearfx">
+      <a href="/joinq"><span class="icon sms"></span>법무상담신청</a>
+      <a href="<?= $this->dinfo['manager']['navertok'] ?>" target="_blank"><span class="icon naver"></span>톡톡상담</a>
+      <a href="<?= $this->dinfo['manager']['kakaotok'] ?>" target="_blank"><span class="icon kakao"></span>카카오톡</a>
     </div>
+    <!--e:하단 퀵버튼 추가(업체 상세 페이지 제외)-->
 
     <script>
       //스와이퍼
@@ -159,6 +214,16 @@
           delay: 5000,
           disableOnInteraction: false,
         },
+      });
+
+      new Swiper('.footer-logo-swiper', {
+        loop: true,
+        slidesPerView: 'auto',
+        autoplay: {
+          delay: 1,
+          disableOnInteraction: false
+        },
+        speed: 3000,
       });
 
       $(function() {
