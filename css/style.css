@@ -1031,7 +1031,7 @@ footer .footer-logo-swiper .swiper-wrapper .swiper-slide a img {
 }
 
 @media (min-width: 1200px) {
-  .footer-quick .footer-quick {
+  .footer-quick {
     display: none;
   }
 }

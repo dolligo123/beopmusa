@@ -983,13 +983,12 @@ footer {
       }
     }
   }
-  
+
   /*데스크탑*/
   @media (min-width: 1200px) {
-    .footer-quick{
-      display: none;
-    }
+    display: none;
   }
+  
 }
 
 /*개인정보수집 팝업====================================================*/
