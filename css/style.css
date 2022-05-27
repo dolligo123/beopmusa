@@ -4724,7 +4724,7 @@ footer .footer-logo-swiper .swiper-wrapper .swiper-slide a img {
   .skyscraper-wrap {
     position: fixed;
     z-index: 100;
-    top: 250px;
+    top: 220px;
     right: calc(50% - 1200px/2 - 140px - 40px);
     background-color: #fff;
     padding: 8px;
@@ -4785,7 +4785,7 @@ footer .footer-logo-swiper .swiper-wrapper .swiper-slide a img {
     border-radius: 100px;
     background-color: #3a4d62;
     color: #fff;
-    font-size: 25px;
+    font-size: 24px;
     line-height: 1.2;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
     -webkit-box-shadow: inset -4px -3px 13px rgba(0, 0, 0, 0.3);
@@ -4795,8 +4795,8 @@ footer .footer-logo-swiper .swiper-wrapper .swiper-slide a img {
     font-weight: bold;
   }
   .skyscraper-wrap ul li a .icon {
-    width: 70px;
-    height: 70px;
+    width: 65px;
+    height: 65px;
     margin-bottom: 8px;
   }
   .skyscraper-wrap ul li a .icon.icon-1 {
@@ -4807,11 +4807,11 @@ footer .footer-logo-swiper .swiper-wrapper .swiper-slide a img {
   }
   .skyscraper-wrap ul li a .icon.icon-3 {
     background-image: url(../images/icon-skyscraper-3.svg);
-    height: 50px;
+    height: 45px;
   }
   .skyscraper-wrap ul li a .icon.icon-4 {
     background-image: url(../images/icon-skyscraper-4.svg);
-    height: 50px;
+    height: 45px;
   }
   .skyscraper-wrap ul li a .text {
     display: block;
