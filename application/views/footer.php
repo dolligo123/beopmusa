@@ -204,7 +204,7 @@
     <!--s:하단 퀵버튼 추가(업체 상세 페이지 제외)-->
     <?php if(empty($data[0]['owner'])): ?>
     <div class="footer-quick clearfx">
-      <a href="/joinq"><span class="icon sms"></span>법무상담신청</a>
+      <a href="/counselq"><span class="icon sms"></span>법무상담신청</a>
       <a href="<?= $this->dinfo['manager']['navertok'] ?>" target="_blank"><span class="icon naver"></span>톡톡상담</a>
       <a href="<?= $this->dinfo['manager']['kakaotok'] ?>" target="_blank"><span class="icon kakao"></span>카카오톡</a>
     </div>

@@ -35,7 +35,7 @@
 		<div class="container">
 			<ul class="clearfx">
 				<li><a href="/" class="icon home">홈</a></li>
-				<li><a href="/joinq">온라인 가맹문의</a></li>
+				<li><a href="/counselq">법무상담신청</a></li>
 			</ul>
 		</div>
 	</div>
