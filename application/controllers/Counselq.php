@@ -34,6 +34,18 @@ class Counselq extends Parents
       // send sms, email
       $this->sendsms($id);      
 
+      // 알림톡 보내기
+      $button = array(
+        "name"=>"법무사넷 바로가기",
+        "type"=>"WL",
+        "url_mobile"=>"http://www.beopmusa.net",
+        "url_pc"=>"http://www.beopmusa.net"
+      );
+
+  
+      $msg = "[법무사넷]\n".$param['name']."님 안녕하세요.\n우리지역 법무사 찾기 법무사넷\n상담 접수가 완료되었습니다.\n\n이제 희망하신 통화가능 시간에\n가장 가까운 법무사가\n연락드리도록 하겠습니다.\n\n감사합니다.^^\n\n온라인 상담 접수 : 365일 24시간\n고객응대 전화 : 평일 09:00~18:00";
+      $val = $this->common->kakao_alim('beopmusa_001', $param['tel'], $msg, $button);
+
       $this->common->alert('상담 접수가 완료 되었습니다.', "/");
     else :
       show_404();
