@@ -131,7 +131,7 @@ class Common
 		$sms_url = "https://sslsms.cafe24.com/sms_sender.php"; // HTTPS 전송요청 URL
 		// $sms_url = "http://sslsms.cafe24.com/sms_sender.php"; // 전송요청 URL
 		$sms['user_id'] = base64_encode("beopmusasms"); //SMS 아이디.
-		$sms['secure'] = base64_encode("b848ad1688059eef63d13ff487461247") ;//인증키
+		$sms['secure'] = base64_encode("b848ad1688059eef63d13ff487461247"); //인증키
 		$sms['msg'] = base64_encode($message);
 		//if( $_POST['smsType'] == "L"){
 		//    $sms['subject'] =  base64_encode($subject);
@@ -203,8 +203,8 @@ class Common
 		}
 
 
-        // echo print_r($msg);
-        // exit;
+		// echo print_r($msg);
+		// exit;
 
 		//$nointeractive = "1";
 		$nointeractive = "";
@@ -259,5 +259,73 @@ class Common
 	{
 		return (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
 			|| $_SERVER['SERVER_PORT'] == 443;
+	}
+
+
+	// 카카오 알림톡
+	public function kakao_alim($tmplId, $phone, $message, $button, $smsKind = 'M')
+	{
+		$mb_tel = "82" . substr(preg_replace("/[^0-9]*/s", "", $phone), 1);
+		$datetime = date("Y-m-d H:i");
+
+		$url = "https://alimtalk-api.bizmsg.kr/v2/sender/send";
+
+		$json = array(
+			"message_type" => "at",
+			"phn" => "$mb_tel",
+			"profile" => "4bcc3a685d66eebaafac1c786eb5e4b2fc1b1cf5",
+			"tmplId" => "$tmplId",
+			"msg" => "$message",
+			"smsKind" => "$smsKind",
+			"msgSms" => "$message",
+			"smsSender" => "010-8563-1633",
+			"smsLmsTit" => "법무사넷",
+			"button1" => $button,
+		);
+
+		$header = array(
+			'Accept:application/json',
+			'Content-type:application/json',
+			'userid:kok2yo'
+		);
+
+		$json = array($json);
+		$json = json_encode($json);
+
+		$ret = $this->cUrlGetData($url, $json, $header);
+
+		return $ret;
+	}
+
+	/**
+	 * httprequest curl 결과값 리턴.
+	 *
+	 * @param String $url 요청 url
+	 * @param String $post_fields post 파라미터
+	 * @return String or Array  
+	 */
+	public function cUrlGetData($url, $post_fields = null, $headers = null)
+	{
+		$ch = curl_init();
+		$timeout = 100;
+		curl_setopt($ch, CURLOPT_URL, $url);
+		if ($post_fields && !empty($post_fields)) {
+			curl_setopt($ch, CURLOPT_POST, 1);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $post_fields);
+		}
+
+		if ($headers && !empty($headers)) {
+			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+		}
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+		curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+		$data = curl_exec($ch);
+		if (curl_errno($ch)) {
+			echo 'Error:' . curl_error($ch);
+		}
+		curl_close($ch);
+		return $data;
 	}
 }
