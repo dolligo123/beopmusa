@@ -1,3 +1,11 @@
+    <p style="display: none;">
+      법무사넷 - 법무사 찾기, 법무사검색은 법무사넷에서 기업 법무·부동산 등기·집행·공탁·법률분쟁·파산·회생·사망·상속·성년후견·출생,혼인 등
+      법무사넷에 문의를 남기면 우리 지역 대표 법무사가 직접 연락합니다.다양한 생활법률 전문 법무코디네이터 모든 순간에 법무사는 꼭 필요합니다.
+      이럴 때 법무사넷에서 내 지역 법무사를 쉽고 빠르게 찾으세요.법률서류 작성에 대한 상담을 해줄 수 있는 전문가가 필요할 때,언제든 생활법률 상담할 수 있는 내 지역 법무사를 찾을 때
+      합리적인 비용으로 법무 상담을 받고 싶을 때,기업(법인)을 설립하고 운영상 법무서비스를 받고 싶을 때,부동산거래, 가압류가처분, 경공매 참여, 성년후견인 선임, 상속증여, 민사소송집행 등 업무 시
+      법무사넷에 문의를 남겨주세요.
+    </p>
+
     <!--s:푸터-->
     <footer>
       <div class="swiper-container swiper-container-free-mode footer-logo-swiper">
@@ -167,26 +175,26 @@
     <!--e:팝업창 추가-->
 
     <!--s:스카이 스크래퍼 추가-->
-    <?php if(empty($data[0]['owner'])): ?>
-    <div class="skyscraper-wrap">
-      <ul>
-        <li>
-          <a href="/counselq"><span class="blue">법무사<br />연락받기<br /><strong>신청</strong></span></a>
-        </li>
-        <li>
-          <a href="<?= $this->dinfo['manager']['kakaotok'] ?>" target="_blank"><span class="icon icon-1"></span><span class="text">카톡상담</span></a>
-        </li>
-        <li>
-          <a href="<?= $this->dinfo['manager']['navertok'] ?>" target="_blank"><span class="icon icon-2"></span><span class="text">톡톡상담</span></a>
-        </li>
-        <li>
-          <a href="tel:<?= $this->dinfo['manager']['tel_quick'] ?>"><span class="icon icon-3"></span><span class="text">빠른<br />전화상담</span></a>
-        </li>
-        <li>
-          <a href=/beopmusa><span class="icon icon-4"></span><span class="text">내지역<br />법무사찾기</span></a>
-        </li>
-      </ul>
-    </div>
+    <?php if (empty($data[0]['owner'])) : ?>
+      <div class="skyscraper-wrap">
+        <ul>
+          <li>
+            <a href="/counselq"><span class="blue">법무사<br />연락받기<br /><strong>신청</strong></span></a>
+          </li>
+          <li>
+            <a href="<?= $this->dinfo['manager']['kakaotok'] ?>" target="_blank"><span class="icon icon-1"></span><span class="text">카톡상담</span></a>
+          </li>
+          <li>
+            <a href="<?= $this->dinfo['manager']['navertok'] ?>" target="_blank"><span class="icon icon-2"></span><span class="text">톡톡상담</span></a>
+          </li>
+          <li>
+            <a href="tel:<?= $this->dinfo['manager']['tel_quick'] ?>"><span class="icon icon-3"></span><span class="text">빠른<br />전화상담</span></a>
+          </li>
+          <li>
+            <a href=/beopmusa><span class="icon icon-4"></span><span class="text">내지역<br />법무사찾기</span></a>
+          </li>
+        </ul>
+      </div>
     <?php endif; ?>
     <!--e:스카이 스크래퍼 추가-->
 
@@ -202,12 +210,12 @@
     <!--e:스피너 추가-->
 
     <!--s:하단 퀵버튼 추가(업체 상세 페이지 제외)-->
-    <?php if(empty($data[0]['owner'])): ?>
-    <div class="footer-quick clearfx">
-      <a href="/counselq"><span class="icon sms"></span>법무상담신청</a>
-      <a href="<?= $this->dinfo['manager']['navertok'] ?>" target="_blank"><span class="icon naver"></span>톡톡상담</a>
-      <a href="<?= $this->dinfo['manager']['kakaotok'] ?>" target="_blank"><span class="icon kakao"></span>카카오톡</a>
-    </div>
+    <?php if (empty($data[0]['owner'])) : ?>
+      <div class="footer-quick clearfx">
+        <a href="/counselq"><span class="icon sms"></span>법무상담신청</a>
+        <a href="<?= $this->dinfo['manager']['navertok'] ?>" target="_blank"><span class="icon naver"></span>톡톡상담</a>
+        <a href="<?= $this->dinfo['manager']['kakaotok'] ?>" target="_blank"><span class="icon kakao"></span>카카오톡</a>
+      </div>
     <?php endif; ?>
     <!--e:하단 퀵버튼 추가(업체 상세 페이지 제외)-->
 
