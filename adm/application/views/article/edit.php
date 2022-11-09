@@ -52,6 +52,7 @@
 
 
 <script type="text/javascript" src="/adm/smarteditor2/js/HuskyEZCreator.js"></script>
+<script type="text/javascript" src="/js/jquery.iframetracker.js"></script>
 
 <a href="javascript:submitContents(this)" style="display: none;">a</a>
 
@@ -142,11 +143,25 @@
 
 	// 파일 업로드 버튼 클릭
 	setTimeout(function() {
-		$("iframe").contents().find(".se2_mn").click(function() {
+		$("iframe").contents().find(".se2_mn").click(function(event) {
 			$("#attach").click();
 		});
+		// $("iframe").click(function() {
+		// 	alert($(this).prev().length);
+		// 	alert('iframe clicked');
+		// });		
 	}, 2000);
 
+	$('iframe').iframeTracker({
+		blurCallback: function(element, event) {
+			console.log(element);
+		},
+		overCallback: function(element, event) {
+			console.log($(element).prev().attr('id'));
+			this._overId = $(element).parents('.iframe_wrap').attr('id'); // Saving the iframe wrapper id
+		},		
+	});
+	
 	$(document).on("change", "#attach", function() {
 		ajaxFileUpload();
 	});
