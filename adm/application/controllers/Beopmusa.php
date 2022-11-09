@@ -241,8 +241,8 @@ class Beopmusa extends Login
 
       // 전경사진 파일 업로드
       for ($i = 1; $i <= 6; $i++) :
-        if (!empty($_FILES["photo$i"])) :
-          if ($_FILES["photo$i"]["tmp_name"]) :
+        if (isset($_FILES["photo$i"]) && $_FILES["photo$i"]["tmp_name"]) :      
+          if ($_FILES["photo$i"]["tmp_name"]) :              
             // 기존파일 있으면 삭제
             if ($beopmusa["photo$i"]) :
               $file = $_SERVER['DOCUMENT_ROOT'] . $beopmusa["photo$i"];
@@ -276,7 +276,7 @@ class Beopmusa extends Login
             endif;
           endif;
         else :
-          if ($this->input->post("photo_del$i") == "1") :
+          if ($this->input->post("photo".$i."_del$i") == "1") :
             // 파일 있으면 삭제
             if ($beopmusa["photo$i"]) :
               $file = $_SERVER['DOCUMENT_ROOT'] . $beopmusa["photo$i"];
