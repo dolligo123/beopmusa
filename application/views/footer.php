@@ -1,3 +1,10 @@
+    <p style="display: none;">
+      법무사넷 - 법무사 찾기, 법무사검색은 법무사넷에서 기업 법무·부동산 등기·집행·공탁·법률분쟁·파산·회생·사망·상속·성년후견·출생,혼인 등
+      법무사넷에 문의를 남기면 우리 지역 대표 법무사가 직접 연락합니다.다양한 생활법률 전문 법무코디네이터 모든 순간에 법무사는 꼭 필요합니다.
+      이럴 때 법무사넷에서 내 지역 법무사를 쉽고 빠르게 찾으세요.법률서류 작성에 대한 상담을 해줄 수 있는 전문가가 필요할 때,언제든 생활법률 상담할 수 있는 내 지역 법무사를 찾을 때
+      합리적인 비용으로 법무 상담을 받고 싶을 때,기업(법인)을 설립하고 운영상 법무서비스를 받고 싶을 때,부동산거래, 가압류가처분, 경공매 참여, 성년후견인 선임, 상속증여, 민사소송집행 등 업무 시
+      법무사넷에 문의를 남겨주세요.
+    </p>
     <!--s:푸터-->
     <footer>
       <div class="swiper-container swiper-container-free-mode footer-logo-swiper">
@@ -47,6 +54,7 @@
             <span><strong>T</strong> : <a href="tel:<?= $this->dinfo['manager']['tel_owner'] ?>"><?= $this->dinfo['manager']['tel_owner'] ?></a></span><span class="bar"></span>
             <span><strong>E</strong> : <a href="mailto:<?= $this->dinfo['manager']['email'] ?>"><?= $this->dinfo['manager']['email'] ?></a></span><br>
             <span><?= $this->dinfo['manager']['addr'] ?></span>
+			<p style="margin: 2px 8px;">'법무사넷' 의 브랜드명은 상표등록(출원)된 것으로 동일 브랜드명을 무단 도용시 법적인 책임을 질 수 있습니다.</p>
             <span class="copyright">Copyright © 법무사넷 All rights reserved.</span>
           </div>
         </div>
@@ -210,6 +218,30 @@
     </div>
     <?php endif; ?>
     <!--e:하단 퀵버튼 추가(업체 상세 페이지 제외)-->
+
+
+
+
+
+<!-- Enliple Tracker Start -->
+<script type="text/javascript">
+		(function(a,g,e,n,t){a.enp=a.enp||function(){(a.enp.q=a.enp.q||[]).push(arguments)};n=g.createElement(e);n.async=!0;n.defer=!0;n.src="https://cdn.megadata.co.kr/dist/prod/enp_tracker_self_hosted.min.js";t=g.getElementsByTagName(e)[0];t.parentNode.insertBefore(n,t)})(window,document,"script");
+    enp('create', 'common', 'beopmusanet', { device: 'B' });    
+    enp('send', 'common', 'beopmusanet');
+</script>
+<!-- Enliple Tracker End -->
+
+
+<!-- Enliple Tracker Start -->
+<script type="text/javascript">
+(function(a,g,e,n,t){a.enp=a.enp||function(){(a.enp.q=a.enp.q||[]).push(arguments)};n=g.createElement(e);n.defer=!0;n.src="https://cdn.megadata.co.kr/dist/prod/enp_tracker_self_hosted.min.js";t=g.getElementsByTagName(e)[0];t.parentNode.insertBefore(n,t)})(window,document,"script");
+    enp('create', 'conversion', 'beopmusanet', { device: 'B', btnSelector: '.mobConv', convType: 'etc', productName: 'etc'});
+</script>
+<!-- Enliple Tracker End -->
+
+
+
+
 
     <script>
       //스와이퍼

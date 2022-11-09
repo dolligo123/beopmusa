@@ -5,30 +5,17 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="canonical" href="https://beopmusa.net/">
   <title>인생 법무사 찾기 네트워크 법무사넷</title>
-
-  <!-- Search Engine -->
-  <meta name="description" content="인생 법무사 찾기 네트워크">
-  <meta name="keywords" lang="ko" content="법무사, 기업법무, 부동산등기, 집행공탁, 법률전쟁, 파상회생, 사망상속, 성년후견, 출생혼인기사">
-  <meta name="author" content="법무사넷">
-  <meta name="image" content="<?php if ($this->common->isSecure()) echo "https://" . $_SERVER['HTTP_HOST'];
-                              else echo "http://" . $_SERVER['HTTP_HOST']; ?>/images/ogimage.jpg">
-  <!-- Schema.org for Google -->
-  <meta itemprop="name" content="법무사넷">
-  <meta itemprop="description" content="인생 법무사 찾기 네트워크">
-  <meta itemprop="image" content="<?php if ($this->common->isSecure()) echo "https://" . $_SERVER['HTTP_HOST'];
-                                  else echo "http://" . $_SERVER['HTTP_HOST']; ?>/images/ogimage.jpg">
-  <!-- Open Graph general (Facebook, Pinterest & Google+) -->
-  <meta property="og:title" content="법무사넷">
-  <meta property="og:description" content="인생 법무사 찾기 네트워크">
+  <meta name="naver-site-verification" content="7e4aa3c8f7f524ece801468f2bef329990f3036a" />
+  <meta name="keywords" lang="ko" content="법무사, 법무사찾기, 법무사넷, 기업법무, 부동산등기, 집행공탁, 법률분쟁, 파산회생, 사망상속, 성년후견, 출생혼인, 가사">
+  <meta name="description" content="법무사찾기, 문의 남기면 법무사 직접 연락, 기업법무, 부동산등기, 법률분쟁, 파산회생 등 빠른상담">
+  <meta property="og:title" content="인생 법무사 찾기 네트워크 법무사넷">
+  <meta property="og:description" content="법무사찾기, 문의 남기면 법무사 직접 연락, 기업법무, 부동산등기, 법률분쟁, 파산회생 등 빠른상담">
   <meta property="og:image" content="<?php if ($this->common->isSecure()) echo "https://" . $_SERVER['HTTP_HOST'];
                                       else echo "http://" . $_SERVER['HTTP_HOST']; ?>/images/ogimage.jpg">
-  <meta property="og:url" content="<?php if ($this->common->isSecure()) echo "https://" . $_SERVER['HTTP_HOST'];
-                                    else echo "http://" . $_SERVER['HTTP_HOST']; ?>">
-  <meta property="og:site_name" content="법무사넷">
-  <meta property="og:locale" content="ko_KR">
+  <meta property="og:url" content="https://beopmusa.net/">
   <meta property="og:type" content="website">
-
   <link rel="stylesheet" href="/css/swiper.css">
   <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0" />
   <link href="/css/nanum-square.css" rel="stylesheet">

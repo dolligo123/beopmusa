@@ -405,7 +405,7 @@
     						</li>
     					</ul>
     				</div>
-    				<button class="submit-btn">상담 신청하기<span class="icon"></span></button>
+    				<button class="submit-btn mobConv">상담 신청하기<span class="icon"></span></button>
     			</form>
     		</div>
     	</div>
