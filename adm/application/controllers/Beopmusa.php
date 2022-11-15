@@ -214,7 +214,7 @@ class Beopmusa extends Login
           else :
             $data = array('upload_data' => $this->upload->data());
 
-            $this->file_resize($data['upload_data']['full_path']);
+            // $this->file_resize($data['upload_data']['full_path']);
             $intro_photo = str_replace($_SERVER['DOCUMENT_ROOT'], "", $data['upload_data']['full_path']);
 
             $param2['fields']['intro_photo'] = $intro_photo;
