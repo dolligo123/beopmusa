@@ -14,12 +14,12 @@
 	<meta name="image"
 		content="<?php if($this->common->isSecure()) echo "https://".$_SERVER['HTTP_HOST']; else echo "http://".$_SERVER['HTTP_HOST'];?><?=$data[0]['owner_photo']?>">
 	<!-- Schema.org for Google -->
-	<meta itemprop="name" content="법무사넷">
+	<meta itemprop="name" content="<?=$data[0]['title']?>">
 	<meta itemprop="description" content="인생 법무사 찾기 네트워크 법무사넷 - <?=$data[0]['title']?>">
 	<meta itemprop="image"
 		content="<?php if($this->common->isSecure()) echo "https://".$_SERVER['HTTP_HOST']; else echo "http://".$_SERVER['HTTP_HOST'];?><?=$data[0]['owner_photo']?>">
 	<!-- Open Graph general (Facebook, Pinterest & Google+) -->
-	<meta property="og:title" content="법무사넷">
+	<meta property="og:title" content="<?=$data[0]['title']?>">
 	<meta property="og:description" content="인생 법무사 찾기 네트워크 법무사넷 - <?=$data[0]['title']?>">
 	<meta property="og:image"
 		content="<?php if($this->common->isSecure()) echo "https://".$_SERVER['HTTP_HOST']; else echo "http://".$_SERVER['HTTP_HOST'];?><?=$data[0]['owner_photo']?>">
