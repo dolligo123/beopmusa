@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="/css/swiper.css">
   <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0" />
   <link href="/css/nanum-square.css" rel="stylesheet">
+  <link rel="shortcut icon" type="image/x-icon" href="../images/favi.ico">
   <script src="/js/swiper.js"></script>
   <script src="/js/jquery-3.3.1.js"></script>
   <script src="/js/common.js"></script>
