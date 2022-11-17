@@ -3587,6 +3587,10 @@ footer .footer-logo-swiper .swiper-wrapper .swiper-slide a img {
   }
 }
 
+.office-info-wrap {
+  overflow: hidden;
+}
+
 .office-info-wrap .left {
   display: block;
   width: 220px;
