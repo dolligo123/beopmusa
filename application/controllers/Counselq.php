@@ -27,23 +27,52 @@ class Counselq extends Parents
   {
     if ($this->input->method() == "post") :
       $param = $this->input->post(null, true);
+      if (empty($param['name']) || !$param['name']) :
+        $this->common->alert('필수 항목이 누락 되었습니다.', "/");
+        exit;
+      endif;
+      if (empty($param['tel']) || !$param['tel']) :
+        $this->common->alert('필수 항목이 누락 되었습니다.', "/");
+        exit;
+      endif;
+      if (empty($param['city_code']) || !$param['city_code']) :
+        $this->common->alert('필수 항목이 누락 되었습니다.', "/");
+        exit;
+      endif;
+      if (empty($param['district_code']) || !$param['district_code']) :
+        $this->common->alert('필수 항목이 누락 되었습니다.', "/");
+        exit;
+      endif;
+      if (empty($param['fields']) || !$param['fields']) :
+        $this->common->alert('필수 항목이 누락 되었습니다.', "/");
+        exit;
+      endif;
+      if (empty($param['title']) || !$param['title']) :
+        $this->common->alert('필수 항목이 누락 되었습니다.', "/");
+        exit;
+      endif;
+      if (empty($param['desc']) || !$param['desc']) :
+        $this->common->alert('필수 항목이 누락 되었습니다.', "/");
+        exit;
+      endif;
+
       $param['regist_date'] = date("Y-m-d H:i:s");
       $param['update_date'] = date("Y-m-d H:i:s");
       $id = $this->counselq_model->create($param);
 
       // send sms, email
-      $this->sendsms($id);      
+      $this->sendsms($id);
 
       // 알림톡 보내기
       $button = array(
-        "name"=>"법무사넷 바로가기",
-        "type"=>"WL",
-        "url_mobile"=>"http://www.beopmusa.net",
-        "url_pc"=>"http://www.beopmusa.net"
+        "name" => "법무사넷 바로가기",
+        "type" => "WL",
+        "url_mobile" => "http://www.beopmusa.net",
+        "url_pc" => "http://www.beopmusa.net"
       );
 
-  
-      $msg = "[법무사넷]\n".$param['name']."님 안녕하세요.\n우리지역 법무사 찾기 법무사넷\n상담 접수가 완료되었습니다.\n\n이제 희망하신 통화가능 시간에\n가장 가까운 법무사가\n연락드리도록 하겠습니다.\n\n감사합니다.^^\n\n온라인 상담 접수 : 365일 24시간\n고객응대 전화 : 평일 09:00~18:00";
+
+      $msg = "[법무사넷]\n" . $param['name'] . "님 안녕하세요.\n우리지역 법무사 찾기 법무사넷\n상담 접수가 완료되었습니다.\n\n이제 희망하신 통화가능 시간에\n가장 가까운 법무사가\n연락드리도록 하겠습니다.\n\n감사합니다.^^\n\n온라인 상담 접수 : 365일 24시간\n고객응대 전화 : 평일 09:00~18:00";
       $val = $this->common->kakao_alim('beopmusa_001', $param['tel'], $msg, $button);
 
       $this->common->alert('상담 접수가 완료 되었습니다.', "/");
@@ -116,10 +145,9 @@ class Counselq extends Parents
       $message = str_replace("</h2>", "\n", $message);
       if (ENVIRONMENT == 'production') :
         $isuccess = $this->common->send_sms($r_phone, "010", "9564",  "2341", $message, "", "");
-      else:
+      else :
         $isuccess = $this->common->send_sms('01072713121', "010", "9564",  "2341", $message, "", "");
       endif;
-      
     }
   }
 
