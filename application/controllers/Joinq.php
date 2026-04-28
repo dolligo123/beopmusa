@@ -53,13 +53,30 @@ class Joinq extends Parents
   private function verify_recaptcha()
   {
     $token = $this->input->post('g-recaptcha-response');
-    if (empty($token)) return false;
+    if (empty($token)) {
+      log_message('error', 'reCAPTCHA [joinq]: token empty');
+      return false;
+    }
 
     $secret = $this->config->item('recaptcha_secret_key');
-    $response = file_get_contents(
-      'https://www.google.com/recaptcha/api/siteverify?secret=' . urlencode($secret) . '&response=' . urlencode($token)
-    );
+    $ch = curl_init('https://www.google.com/recaptcha/api/siteverify');
+    curl_setopt_array($ch, [
+      CURLOPT_POST           => true,
+      CURLOPT_POSTFIELDS     => http_build_query(['secret' => $secret, 'response' => $token]),
+      CURLOPT_RETURNTRANSFER => true,
+      CURLOPT_TIMEOUT        => 10,
+    ]);
+    $response = curl_exec($ch);
+    $curl_error = curl_error($ch);
+    curl_close($ch);
+
+    if ($curl_error) {
+      log_message('error', 'reCAPTCHA [joinq] cURL error: ' . $curl_error);
+      return false;
+    }
+
     $result = json_decode($response, true);
+    log_message('debug', 'reCAPTCHA [joinq] result: ' . $response);
     return !empty($result['success']) && isset($result['score']) && $result['score'] >= 0.5;
   }
 
