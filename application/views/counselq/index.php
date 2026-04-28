@@ -142,6 +142,7 @@
 						</li>
 					</ul>
 				</div>
+				<input type="hidden" name="g-recaptcha-response" id="recaptcha-token-counselq">
 				<button class="submit-btn">상담 신청하기<span class="icon"></span></button>
 			</form>
 		</div>
@@ -247,10 +248,11 @@
 	<!--e:개인정보수집-->
 </main>
 
+<script src="https://www.google.com/recaptcha/api.js?render=<?= $recaptcha_site_key ?>"></script>
 <script>
-	// 상단 접수전 체크
+	var _recaptchaToken = null;
+
 	function chkval() {
-		// console.log($('input[name="fields"]:checked').val());
 		let fields = '';
 		$('.fields:checked').each(function() {
 			fields += ',' + $(this).val();
@@ -261,5 +263,16 @@
 			return false;
 		}
 		$('input[name="fields"]').val(fields);
+
+		if (_recaptchaToken) return true;
+
+		grecaptcha.ready(function() {
+			grecaptcha.execute('<?= $recaptcha_site_key ?>', {action: 'counselq'}).then(function(token) {
+				_recaptchaToken = token;
+				$('#recaptcha-token-counselq').val(token);
+				$('.form-wrap form').submit();
+			});
+		});
+		return false;
 	}
 </script>

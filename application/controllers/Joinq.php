@@ -13,13 +13,15 @@ class Joinq extends Parents
     $this->load->model("manager_model");
     $this->load->library('common');
     $this->load->library('email');
+    $this->config->load('recaptcha');
     date_default_timezone_set('Asia/Seoul');
   }
 
   public function index()
   {
+    $data['recaptcha_site_key'] = $this->config->item('recaptcha_site_key');
     $this->load->view('header');
-    $this->load->view('joinq/index');
+    $this->load->view('joinq/index', $data);
     $this->load->view('footer');
   }
 
@@ -27,6 +29,11 @@ class Joinq extends Parents
   public function post()
   {
     if ($this->input->method() == "post") :
+      if (!$this->verify_recaptcha()) {
+        $this->common->alert('보안 문자(CAPTCHA) 인증에 실패했습니다. 다시 시도해 주세요.', "/joinq");
+        return;
+      }
+
       // $_REQUEST
       $param = $this->input->post(null, true);
 
@@ -41,6 +48,19 @@ class Joinq extends Parents
     else :
       show_404();
     endif;
+  }
+
+  private function verify_recaptcha()
+  {
+    $token = $this->input->post('g-recaptcha-response');
+    if (empty($token)) return false;
+
+    $secret = $this->config->item('recaptcha_secret_key');
+    $response = file_get_contents(
+      'https://www.google.com/recaptcha/api/siteverify?secret=' . urlencode($secret) . '&response=' . urlencode($token)
+    );
+    $result = json_decode($response, true);
+    return !empty($result['success']) && isset($result['score']) && $result['score'] >= 0.5;
   }
 
 
