@@ -184,16 +184,30 @@
 						</li>
 					</ul>
 				</div>
+					<input type="hidden" name="g-recaptcha-response" id="recaptcha-token-joinq">
 				<button class="submit-btn">상담 신청하기<span class="icon"></span></button>
 			</form>
 		</div>
 	</div>
 </main>
 
+<script src="https://www.google.com/recaptcha/api.js?render=<?= $recaptcha_site_key ?>"></script>
 <script>
+	var _recaptchaToken = null;
+
 	function chkval() {
 		let local = $(".form-wrap").find("select[name='city_code'] option:checked").text() + ' ' + $(".form-wrap").find("select[name='district_code'] option:checked").text();
 		$("input[name='local']").val(local);
-		return true;
+
+		if (_recaptchaToken) return true;
+
+		grecaptcha.ready(function() {
+			grecaptcha.execute('<?= $recaptcha_site_key ?>', {action: 'joinq'}).then(function(token) {
+				_recaptchaToken = token;
+				$('#recaptcha-token-joinq').val(token);
+				$('.form-wrap form').submit();
+			});
+		});
+		return false;
 	}
 </script>
